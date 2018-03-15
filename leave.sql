@@ -31,7 +31,7 @@ CREATE TABLE `casualleaves` (
   `contact_no` bigint(20) DEFAULT NULL,
   `status` text,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +40,7 @@ CREATE TABLE `casualleaves` (
 
 LOCK TABLES `casualleaves` WRITE;
 /*!40000 ALTER TABLE `casualleaves` DISABLE KEYS */;
+INSERT INTO `casualleaves` VALUES (2,'8',7,'2018-03-13','jj',9,'Approved'),(3,'8',8,'2018-03-08','axaxu',8,'Rejected'),(4,'88',1,'2018-03-07','dghdgh',11,'Reverted Back'),(6,'8',8,'2018-03-02','hbhjbbbii',898799,'Approved'),(7,'8',8998,'2018-03-02','uiui',98,'Recommended'),(8,'8',898,'2018-03-02','hbhhshxjskk',98,'Rejected'),(9,'9',8,'2018-03-09','jhiuuiiu',899,'Recommended');
 /*!40000 ALTER TABLE `casualleaves` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -55,7 +56,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +65,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (13,'2018_03_12_185601_casualleave',1),(23,'2014_10_12_000000_create_users_table',2),(24,'2014_10_12_100000_create_password_resets_table',2),(25,'2018_03_13_063818_create_casual_leaves_table',2);
+INSERT INTO `migrations` VALUES (13,'2018_03_12_185601_casualleave',1),(46,'2018_03_13_063818_create_casual_leaves_table',2),(51,'2014_10_12_000000_create_users_table',3),(52,'2014_10_12_100000_create_password_resets_table',3),(53,'2018_03_14_172205_create_casualleaves_table',3);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +107,7 @@ CREATE TABLE `users` (
   `emp_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `age` int(11) NOT NULL,
+  `dob` date NOT NULL,
   `sex` enum('M','F') COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `religion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -133,7 +134,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_emp_id_unique` (`emp_id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +143,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'1','u','u','u@b.co','u',8,'M','i','i','i',9,'i','i','N',89,'j','j','j','j','j',99,9,'j',9,9,'nk',NULL,NULL,NULL);
+INSERT INTO `users` VALUES (1,'8','u','recommending','a@b.com','$2y$10$c4P5nctgOmQhuZT1J.jV3e1moYgQMUwzh9N214I39fji/4qQRre7u','0011-11-11','M','l','l','l',99,'l','l','N',9,'l','l','l','l','9',888888888888,9,'l',9,9,'9','yeVUl5Y6aCH7M59iEQ75Dd4pMtLNNv878luqWczPiZxg3Pn938ZVpSpUzU9e','2018-03-14 11:55:12','2018-03-14 11:55:12'),(2,'88','uuuu','general','priyankarotte@gmail.com','$2y$10$bx2GeEOLlab.6hxIm7ittuWf/gOaMprBwyBgfI1/HAYwMY1O8HEu.','0077-07-07','M','jj','j','j',8,'8','8','N',8,'8','8','8','9','8',777777777777,8,'8',8,88,'8','0wEOgk9KrnKIDkXVfmJr5D2ZNkPNCfof5hIwie68dq5Un5NX4AiFY4zg9eGV','2018-03-14 13:22:39','2018-03-14 13:22:39'),(3,'9','9','approval','cse160001057@iiti.ac.in','$2y$10$Js.Qor8vGoB0CTrkEiBNneyMlqIe5qSPXqpZ4bIhEj4xzask9l1ru','0088-08-08','M','8','8','8',8,'8','88','N',8,'8','8','8','8','8',888888888888,8,'8',8,8,'8','v63FhyWETGYn688PN1TftUIpn3tzKJd0DbmTZrDYxf6aorGXrj6e1x3d9LUR','2018-03-15 08:16:29','2018-03-15 08:16:29');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -155,4 +156,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-13 15:30:45
+-- Dump completed on 2018-03-15 20:04:29
