@@ -172,11 +172,12 @@ a {
 .post-item {
   padding: 10px 20px;
   margin: 20px 0;
-  border-left: 1px solid #EEE;
+  border-left: 6px solid #000;
   &:hover {
     background-color: #ddd;
   }
 }
+
 
 .post-item-header {
   border-bottom: 2px solid #000;
@@ -200,9 +201,13 @@ a {
 
 .post-item-more {
   text-transform: uppercase;
-  border: 1px solid #000;
-  padding: 2px 8px;
+  padding: 2px 1px;
   margin: 0;
+}
+
+.post-item-more:hover {
+  text-decoration: none;
+  color: grey;
 }
     i{
         margin:10px;
@@ -213,7 +218,7 @@ a {
             width: 120px;
         }
         img{
-            border-radius:110px;
+            border-radius:80px;
         }
         input[type=text], input[type=number] {
         width: 100%;
@@ -244,15 +249,6 @@ a {
 
         input[type=submit]:hover {
             background-color: #45a049;
-        }
-
-        .deposit, .send {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 20px;
-        }
-        body {
-            font-family: "Lato", sans-serif;
         }
 
     .sidenav {
@@ -289,7 +285,11 @@ a {
 }
 
 .sidenav a:hover,.sidenavright a:hover {
-    color: white;
+    color: grey;
+}
+
+.logo{
+    border-radius: 0px;
 }
 
 
@@ -306,7 +306,7 @@ a {
 
     <div class="jumbotron jumbotron-fluid" style="background-color: #D3D3D3 ">
   <div class="container" style="text-align: center;">
-    <img src="http://icmmsc.iiti.ac.in/images/logo.png" alt="IITI">      
+    <img src="http://icmmsc.iiti.ac.in/images/logo.png" alt="IITI" class="logo">      
   </div>
 
   <div class="container">

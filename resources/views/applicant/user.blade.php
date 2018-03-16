@@ -27,29 +27,94 @@
   </h2>
 </div>
   <div class="container">
-  <ul class="list-group">
-    <li class="list-group-item">Name : {{ $user_details->name }}</li>
-  <li class="list-group-item">Employee Code : {{ $user_details->emp_id }}</li>
-    <li class="list-group-item">Date of Birth : {{ $user_details->dob }}</li>
-    <li class="list-group-item">Sex : {{ $user_details->sex }}</li>
-  <li class="list-group-item">Discipline : {{ $user_details->discipline }}</li>
-    <li class="list-group-item">Address : {{ $user_details->address }}</li>
-  <li class="list-group-item">Home Town : {{ $user_details->hometown }}</li>
-  <li class="list-group-item">Religion  : {{ $user_details->religion }}</li>
-  <li class="list-group-item">Caste  : {{ $user_details->caste }}</li>
-  <li class="list-group-item">Contact No.  : {{ $user_details->contact }}</li>
-  <li class="list-group-item">Marital Status  : {{ $user_details->marital_status }}</li>
-  <li class="list-group-item">Children  : {{ $user_details->children }}</li>
-  <li class="list-group-item">Salutation  : {{ $user_details->salutation }}</li>
-  <li class="list-group-item">Category  : {{ $user_details->category }}</li>
-  <li class="list-group-item">Physically Disabled  : {{ $user_details->physically_disabled }}</li>
-  <li class="list-group-item">PNT No.  : {{ $user_details->pnt_no }}</li>
-  <li class="list-group-item">Appointed On Quota  : {{ $user_details->appointed_on_quota }}</li>
-  <li class="list-group-item">Salary  : {{ $user_details->salary }}</li>
-  <li class="list-group-item">Achievement  : {{ $user_details->achievements }}</li>
-  <li class="list-group-item">PAN No.  : {{ $user_details->pan_no }}</li>
-  <li class="list-group-item">Aadhar No.  : {{ $user_details->aadhaar }}</li>
-  </ul>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td style="font-weight: bold;">Name</td>
+        <td>{{ $user_details->name }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Employee Code</td>
+        <td>{{ $user_details->emp_id }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Date of Birth</td>
+        <td>{{ $user_details->dob }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Sex</td>
+        <td>{{ $user_details->sex }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Discipline</td>
+        <td>{{ $user_details->discipline }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Address</td>
+        <td>{{ $user_details->address }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Hometown</td>
+        <td>{{ $user_details->hometown }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Religion</td>
+        <td>{{ $user_details->religion }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Caste</td>
+        <td>{{ $user_details->caste }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Contact No.</td>
+        <td>{{ $user_details->contact }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Marital Status</td>
+        <td>{{ $user_details->marital_status }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Children</td>
+        <td>{{ $user_details->children }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Salutation</td>
+        <td>{{ $user_details->salutation }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Category</td>
+        <td>{{ $user_details->category }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Physically Disabled</td>
+        <td>{{ $user_details->physically_disabled }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">PNT No.</td>
+        <td>{{ $user_details->pnt_no }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Appointed On Quota</td>
+        <td>{{ $user_details->appointed_on_quota }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Salary</td>
+        <td>{{ $user_details->salary }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Achievements</td>
+        <td>{{ $user_details->achievements }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">PAN No.</td>
+        <td>{{ $user_details->pan_no }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Aadhar No.</td>
+        <td>{{ $user_details->aadhaar }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 @endsection
 
