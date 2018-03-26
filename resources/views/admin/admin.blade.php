@@ -26,7 +26,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-
+    
 </head>
 <body>
 
@@ -55,10 +55,49 @@
                         
                     </li>
                     <li class="menu-item">
+
                         <a href="#" > <i class="menu-icon fa fa-table"></i>Update User</a>
+                        
+
                     </li>
                     <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-pencil"></i>Update User</a>
+                        <a href="#"  data-toggle="modal" data-target="#myModal" > <i class="menu-icon fa fa-pencil"></i>Delete User</a>
+                       <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+    
+      <!-- Modal content-->
+<div class="container">
+                        <div class="modal-content" style="position:center">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Delete User</h4>
+                            
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/delete" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            {{ csrf_field() }}
+                                @include ('errors.errors')
+      
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="emp_id" class=" form-control-label">Employee Id</label></div>
+                            <div class="col-12 col-md-9"><input type="text" placeholder="Employee Id" id="emp_id" name="emp_id" p class="form-control">
+                            </div>
+                          </div>
+                          <div>
+                          <button id="submit" type="submit" class="btn btn-lg btn-info btn-block">
+                                              <span id="submit">Delete</span>
+                                         </button>
+                                      </div>
+                        </form>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+      
+                            </div>
+  
+                    </div>     
                     </li>
                     <li class="menu-item">
                         <a href="#" > <i class="menu-icon fa fa-pencil"></i>Manage Holidays</a>

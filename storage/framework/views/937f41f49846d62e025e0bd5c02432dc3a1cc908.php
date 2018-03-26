@@ -58,7 +58,7 @@
                         <a href="#" > <i class="menu-icon fa fa-table"></i>Update User</a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-pencil"></i>Update User</a>
+                        <a href="#" > <i class="menu-icon fa fa-pencil"></i>Delete User</a>
                     </li>
                     <li class="menu-item">
                         <a href="#" > <i class="menu-icon fa fa-pencil"></i>Manage Holidays</a>
@@ -337,12 +337,12 @@
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="aadhaar" class=" form-control-label">Aadhaar</label></div>
-                            <div class="col-12 col-md-9"><input placeholder="Aadhaar" type="text" name="aadhaar" class="form-control">
+                            <div class="col-12 col-md-9"><input placeholder="Aadhaar" type="number" name="aadhaar" class="form-control">
                             </div>
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="dob" class=" form-control-label">Date Of Birth</label></div>
-                            <div class="col-12 col-md-9"><input placeholder="yyyy/mm/dd" type="text" name="dob" class="form-control">
+                            <div class="col-12 col-md-9"><input placeholder="yyyy/mm/dd" type="data-toggle" name="dob" class="form-control">
                             </div>
                           </div>
                           <div class="row form-group">
@@ -368,12 +368,12 @@
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="contact" class=" form-control-label">Contact</label></div>
-                            <div class="col-12 col-md-9"><input placeholder="Contact" type="text" name="contact" class="form-control">
+                            <div class="col-12 col-md-9"><input placeholder="Contact" type="number" name="contact" class="form-control">
                             </div>
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="pnt_no" class=" form-control-label">PNT Number</label></div>
-                            <div class="col-12 col-md-9"><input placeholder="PNT Number" type="text" name="pnt_no" class="form-control">
+                            <div class="col-12 col-md-9"><input placeholder="PNT Number" type="number" name="pnt_no" class="form-control">
                             </div>
                           </div>
                           <div class="row form-group">
@@ -418,7 +418,7 @@
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="children" class=" form-control-label">Children</label></div>
-                            <div class="col-12 col-md-9"><input placeholder="Children" type="text" name="children" class="form-control">
+                            <div class="col-12 col-md-9"><input placeholder="Children" type="number" name="children" class="form-control">
                             </div>
                           </div>
                           <div class="row form-group">

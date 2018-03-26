@@ -14,6 +14,7 @@ class RegistrationController extends Controller
     public function create() {
     	return view('register');
     }
+    
 
     // store the information of the user
     public function store() {
@@ -54,4 +55,5 @@ class RegistrationController extends Controller
 
     	return redirect()->route('homeAdmin');
     }
+    
 }
