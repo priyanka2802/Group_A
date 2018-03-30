@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'emp_id', 'emp_type', 'sex', 'address', 'religion', 'caste', 'contact', 'salutation', 'category', 'physically_disabled', 'pnt_no', 'appointed_on_quota', 'discipline', 'achievements', 'hometown', 'pan_no', 'aadhaar', 'salary', 'marital_status', 'children', 'cl_balance', 'photo', 'dob',
+        'name', 'email', 'password', 'emp_id', 'emp_type', 'sex', 'address', 'religion', 'caste', 'contact', 'salutation', 'category', 'physically_disabled', 'pnt_no', 'appointed_on_quota', 'discipline', 'achievements', 'hometown', 'pan_no', 'aadhaar', 'salary', 'marital_status', 'children', 'cl_balance', 'photo', 'dob','caste_pic','achievement_pic','aadhaar_pic','pan_pic','disability_pic'
     ];
 
     /**
@@ -39,7 +39,7 @@ class User extends Authenticatable
 
     //to insert info into users table.
 
-    public static function insert_into_user($user,$p) {
+    public static function insert_into_user($user,$p,$disability_pic,$achievement_pic,$pan_pic,  $aadhaar_pic,$caste_pic) {
         $user = User::create([
             'emp_id'        => $user['emp_id'],
             'name'          => $user['name'],
@@ -66,7 +66,12 @@ class User extends Authenticatable
             'marital_status'=> $user['marital_status'],
             'children'      => $user['children'],
             'cl_balance'    => $user['cl_balance'],
-            'photo'         => $p
+            'photo'         => $p,
+            'disability_pic' => $disability_pic,
+            'pan_pic' => $pan_pic,
+            'aadhaar_pic' => $aadhaar_pic,
+            'achievement_pic' => $achievement_pic,
+            'caste_pic' => $caste_pic
         ]);
 
         auth()->login($user);

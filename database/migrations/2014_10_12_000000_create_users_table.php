@@ -42,6 +42,11 @@ class CreateUsersTable extends Migration
             $table->integer('cl_balance');
             //$table->integer('ocl_balance');
             $table->string('photo');
+            $table->string('achievement_pic');
+            $table->string('caste_pic');
+            $table->string('aadhaar_pic');
+            $table->string('pan_pic');
+            $table->string('disability_pic');
             $table->rememberToken();
             $table->timestamps();
         });

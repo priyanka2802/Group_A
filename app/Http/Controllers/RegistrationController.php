@@ -45,21 +45,72 @@ class RegistrationController extends Controller
     		'children' => 'required',
     		'cl_balance' => 'required',
     		'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    		'physically_disabled' => 'required'
+    		'pan_pic' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    		'aadhaar_pic' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
     	]);
+            if ($request->hasFile('pan_pic'))
+     {   
+        $na=$request->file('pan_pic')->getClientOriginalName();
+   $image = $request->file('pan_pic');
+    $pan_pic = time().$na;
+    $image->move('../public/images/', $pan_pic);
+   }
+       if ($request->hasFile('aadhaar_pic'))
+    {
+    $na=$request->file('aadhaar_pic')->getClientOriginalName();
+    $image = $request->file('aadhaar_pic');
+    $aadhaar_pic = time().$na;
+    $image->move('../public/images/', $aadhaar_pic);
+   }
+
+     if ($request->hasFile('caste_pic'))
+    {
+        $na=$request->file('caste_pic')->getClientOriginalName();
+    $image = $request->file('caste_pic');
+    $caste_pic = time().$na;
+    $image->move('../public/images/', $caste_pic);
+   }
+
+         if ($request->hasFile('disability_pic')) {
+            $na=$request->file('disability_pic')->getClientOriginalName();
+    $image = $request->file('disability_pic');
+    $disability_pic = time().$na;
+    $image->move('../public/images/', $disability_pic);
+
+    }
+    else
+    {
+
+        $disability_pic =  "NULL";
+    }
+
+       if ($request->hasFile('achievement_pic')) {
+        $na=$request->file('achievement_pic')->getClientOriginalName();
+    $image = $request->file('achievement_pic');
+    $achievement_pic = time().$na;
+    $image->move('../public/images/', $achievement_pic);
+    }
+    else
+    {
+        $achievement_pic =  "NULL";
+    }
+
         if ($request->hasFile('photo')) {
     $image = $request->file('photo');
     $name = time().'.'.$image->getClientOriginalExtension();
-    $destinationPath = public_path('/public/images/');
     $image->move('../public/images/', $name);
-    
-
+   /* $disability_pic = 'NULL';
+    $achievement_pic ='NULL';
+    $pan ='NULL';
+    $aadhaar_pic ='NULL';
+*/
     
 
     	//FOR AUTHENTICATION PURPOSE.
-    	User::insert_into_user(request()->all(),$name);
+    	User::insert_into_user(request()->all(),$name,$disability_pic,$achievement_pic,$pan_pic,$aadhaar_pic,$caste_pic);
 
-        Recommend::insertintorecommend(request()->all());
+        Recommend::insertintorecommend(request()->all(),$name,$disability_pic,$achievement_pic,$pan_pic,$aadhaar_pic);
   //  return back()->with('success','Image Upload successfully');
 
     	return redirect()->route('homeAdmin');
