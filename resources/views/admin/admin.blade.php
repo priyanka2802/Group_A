@@ -108,6 +108,9 @@
                     <li class="menu-item">
                         <a href="#" > <i class="menu-icon fa fa-table"></i>Check Status Of Leaves</a>
                     </li>
+                    <li class="menu-item">
+                        <a href="calendar" > <i class="menu-icon fa fa-table"></i>Calendar</a>
+                    </li>
                     
                     
                    
