@@ -2,7 +2,7 @@
 	
 	<div class="sidenav">
   <a href="#" style="text-align: center;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbTzYAUrDCsawDGrujPE8i_3i6YQYOBySJCH0xr0rIyBEz2OVZgg" alt="user Image" height="200px" width="150/px"/>
+  <img src="/images/<?php echo e($user_details->photo); ?>" alt="user Image" height="200px" width="150/px"/>
   </a>
   <a href="#"><?php echo e($user_details->name); ?></a>
   <a href="#"><i class="fa fa-cog"></i>Profile Update</a>

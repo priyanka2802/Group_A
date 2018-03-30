@@ -39,7 +39,7 @@ class User extends Authenticatable
 
     //to insert info into users table.
 
-    public static function insert_into_user($user) {
+    public static function insert_into_user($user,$p) {
         $user = User::create([
             'emp_id'        => $user['emp_id'],
             'name'          => $user['name'],
@@ -66,7 +66,7 @@ class User extends Authenticatable
             'marital_status'=> $user['marital_status'],
             'children'      => $user['children'],
             'cl_balance'    => $user['cl_balance'],
-            'photo'         => $user['photo']
+            'photo'         => $p
         ]);
 
         auth()->login($user);

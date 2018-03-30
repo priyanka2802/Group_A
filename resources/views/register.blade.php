@@ -444,10 +444,11 @@
                           </div>
                           
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="photo" class=" form-control-label">Upload Image</label></div>
+                            <div class="col col-md-3"><label for="photo" class=" form-control-label">Upload User Image</label></div>
                             <div class="col-12 col-md-9"><input type="file" id="photo" name="photo" class="form-control-file"></div>
                           </div>
                           <div>
+                          
                           <button id="submit" type="submit" class="btn btn-lg btn-info btn-block">
                                               <i class="fa fa-lock fa-sm"></i>&nbsp;
                                               <span id="submit">Submit</span>

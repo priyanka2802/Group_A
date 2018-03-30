@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
@@ -14,20 +15,15 @@ class TrustProxies extends Middleware
     protected $proxies;
 
     /**
-     * The headers that should be used to detect proxies.
+     * The current proxy header mappings.
      *
-     * @var string
+     * @var array
      */
-    //for v5.6
-    protected $headers = Request::HEADER_X_FORWARDED_ALL;
-
-
-    //for v5.5
-    /*protected $headers = [
+    protected $headers = [
         Request::HEADER_FORWARDED => 'FORWARDED',
         Request::HEADER_X_FORWARDED_FOR => 'X_FORWARDED_FOR',
         Request::HEADER_X_FORWARDED_HOST => 'X_FORWARDED_HOST',
         Request::HEADER_X_FORWARDED_PORT => 'X_FORWARDED_PORT',
         Request::HEADER_X_FORWARDED_PROTO => 'X_FORWARDED_PROTO',
-    ];*/
+    ];
 }
