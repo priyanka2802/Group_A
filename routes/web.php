@@ -18,6 +18,8 @@ Route::get('/calendar', function() {
     return view('calendar');
 });
 
+Route::get('/search', 'HomepageController@showall')->name('homeAdmin');
+
 Route::get('/clform', 'CasualleaveController@show');
 
 Route::get('/user', 'HomepageController@showuser')->name('homeGeneral');

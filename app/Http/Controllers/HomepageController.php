@@ -23,6 +23,13 @@ class HomepageController extends Controller
         // dd($user_details);
         return view('applicant.user', compact('user_details'));
     }
+    public function showall()
+    {
+        $details = DB::select("
+            SELECT * FROM users");
+        return view('search',compact('details'));
+    }
+
 
     //to show the recommending authority homepage.
     public function showrecommend() {
