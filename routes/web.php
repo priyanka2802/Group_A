@@ -18,6 +18,14 @@ Route::get('/calendar', function() {
     return view('calendar');
 });
 
+Route::get('/c', function() {
+    return view('admin.applicantedit');
+});
+
+
+Route::post('/u', 'RegistrationController@updateUsers');
+
+
 Route::get('/search', 'HomepageController@showall')->name('homeAdmin');
 
 Route::get('/clform', 'CasualleaveController@show');
@@ -69,4 +77,11 @@ Route::get('/approval/{user_details}', 'ApprovalController@showleavedetails');
 
 Route::get('/approved/{user_details}', 'ApprovalController@updatestatus1');
 
+<<<<<<< HEAD
 Route::get('/rejected/{user_details}', 'ApprovalController@updatestatus2');
+
+Route::get('/update/{user_details}', 'HomepageController@showuserdetails');
+
+=======
+Route::get('/rejected/{user_details}', 'ApprovalController@updatestatus2');
+>>>>>>> de0d19597635ef8c4ad393d4028244bf74ce5e16

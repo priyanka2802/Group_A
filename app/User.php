@@ -37,6 +37,38 @@ class User extends Authenticatable
         $details = $details[0];
         return $details;
     }
+    
+    public static function updateUser($user) {
+
+        $details = DB::select("
+            UPDATE users SET 
+            emp_type      = ?,
+            email         = ?,
+            dob           = ?,
+            sex        = ? ,
+            address       = ?, 
+            religion      = ? ,
+            caste        = ?,
+            contact    = ? ,
+            category      = ? ,
+            physically_disabled = ?, 
+            pnt_no        = ? ,
+            appointed_on_quota = ?, 
+            discipline   = ? ,
+            achievements  = ? ,
+            hometown      = ? ,
+            pan_no        = ?,
+            aadhaar     = ?,
+            salary        = ?, 
+            marital_status= ? ,
+            children      = ?
+            where emp_id = ?
+ 
+        ", array($user['emp_type'],  $user['email'],$user['dob'],$user['sex'],$user['address'],$user['religion'],$user['caste'],$user['contact'],$user['category'],$user['physically_disabled'],$user['pnt_no'],$user['appointed_on_quota'],$user['discipline'],$user['achievements'],$user['hometown'],$user['pan_no'],$user['aadhaar'],$user['salary'],$user['marital_status'],$user['children']),$user['emp_id']);
+        $details = $details[0];
+
+        
+    }
 
     
 
@@ -76,6 +108,7 @@ class User extends Authenticatable
             'achievement_pic' => $achievement_pic,
             'caste_pic' => $caste_pic
         ]);
+        
 
         auth()->login($user);
 }

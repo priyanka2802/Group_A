@@ -10,23 +10,25 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="{{ URL::asset('apple-icon.png') }}">
+    <link rel="shortcut icon" href="{{ URL::asset('favicon.ico') }}">
     @yield('head')
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/cs-skin-elastic.css') }}">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
-    <link rel="stylesheet" href="assets/scss/style.css">
-    <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('assets/scss/style.css') }}">
+    <link href="{{ URL::asset('assets/css/lib/vector-map/jqvmap.min.css') }}" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-    
+<style>
+    @yield('style')
+</style>  
 </head>
 <body>
 
@@ -40,14 +42,14 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand" href="./"><img src="{{ URL::asset('images/logo.png') }}" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="{{ URL::asset('images/logo2.png') }}" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="#"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">Elements</h3><!-- /.menu-title -->
                     <li class="menu-item">
@@ -218,7 +220,7 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="{{ URL::asset('images/admin.jpg') }}" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -262,21 +264,21 @@
 
     <!-- Right Panel -->
 
-    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="{{ URL::asset('assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{ URL::asset('assets/js/plugins.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/main.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-    <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
-    <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/widgets.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
-    <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+    <script src="{{ URL::asset('assets/js/lib/chart-js/Chart.bundle.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/dashboard.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/widgets.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/lib/vector-map/jquery.vmap.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/lib/vector-map/jquery.vmap.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/lib/vector-map/jquery.vmap.sampledata.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/lib/vector-map/country/jquery.vmap.world.js') }}"></script>
     <script>
         ( function ( $ ) {
             "use strict";

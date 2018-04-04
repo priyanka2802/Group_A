@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\DB;
 class RegistrationController extends Controller
 {
     // create a new user
+    public function updateUsers(Request $request){
+
+       
+
+        User::updateUser(request()->all());
+            
+        
+    }
 
     public function create() {
     	return view('register');
