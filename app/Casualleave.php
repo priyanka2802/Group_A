@@ -22,14 +22,14 @@ class CasualLeave extends Model
         if($emp_type == 'general')
         {
             DB::insert("
-                INSERT INTO casualleaves (emp_id, no_of_days, start_date, purpose, contact_no, status, recommending, approving) VALUES (?, ?, ?, ? , ?, 'Application submitted',?,?)
-            ", array($emp_id, $leave_details['num_days'], $leave_details['start_date'], $leave_details['purpose'], $leave_details['contact'], $leave_details['recommending'], $leave_details['approving']));
+                INSERT INTO casualleaves (emp_id, no_of_days, start_date, end_date, purpose, contact_no, status, recommending, approving) VALUES (?, ?, ?, ? , ?, ?, 'Application submitted',?,?)
+            ", array($emp_id, $leave_details['num_days'], $leave_details['start_date'], $end_date, $leave_details['purpose'], $leave_details['contact'], $leave_details['recommending'], $leave_details['approving']));
         }
         else
         {
             DB::insert("
-                INSERT INTO casualleaves (emp_id, no_of_days, start_date, purpose, contact_no, status, recommending, approving) VALUES (?, ?, ?, ? , ?, 'Recommended', ?, ?)
-            ", array($emp_id, $leave_details['num_days'], $leave_details['start_date'], $leave_details['purpose'], $leave_details['contact'], $leave_details['recommending'], $leave_details['approving']));
+                INSERT INTO casualleaves (emp_id, no_of_days, start_date, end_date, purpose, contact_no, status, recommending, approving) VALUES (?, ?, ?, ? , ?, ?, 'Recommended', ?, ?)
+            ", array($emp_id, $leave_details['num_days'], $leave_details['start_date'], $end_date,  $leave_details['purpose'], $leave_details['contact'], $leave_details['recommending'], $leave_details['approving']));
         }
     }
 /*

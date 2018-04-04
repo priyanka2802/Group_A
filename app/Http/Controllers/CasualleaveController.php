@@ -118,7 +118,10 @@ class CasualleaveController extends Controller
                 }
                 Casualleave::insertIntoCasualleaves($user_details, request()->all());
 
-                
+                 $admin_mail = DB::select("
+                    SELECT name, email FROM users WHERE emp_type = 'Admin'
+                ");
+                 // dd($admin_mail);
             // dd($user_mail[0]->name);
 
             //mail.
@@ -128,9 +131,9 @@ class CasualleaveController extends Controller
                     $message->from('leavemanageriiti@gmail.com','Leave Manager');
             });
 
-            Mail::send(['text'=>'mail/mailrecommended'],$data,function($message) use ($approval_mail)
+            Mail::send(['text'=>'mail/mailrecommended'],$data,function($message) use ($approve_details)
             {
-                    $message->to($recommend_details[0]->email,$recommend_details[0]->name)->subject('Leave Recommended');
+                    $message->to($approve_details[0]->email,$approve_details[0]->name)->subject('Leave Recommended');
                     $message->from('leavemanageriiti@gmail.com','Leave Manager');
             });
 
