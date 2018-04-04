@@ -54,17 +54,17 @@
     </thead>
     <tbody id="myTable">
     	
-    	@foreach( $details as $detail)
+    	@foreach( $details as $user_details)
     <tr>
-    	<td>{{$detail->emp_id}}</td>
-    	<td>{{$detail->name}}</td>
-    	<td>{{$detail->emp_type}}</td>
-    	<td>{{$detail->caste}}</td>
-        <td>{{$detail->dob}}</td>
-        <td>{{$detail->religion}}</td>
-        <td>{{$detail->aadhaar}}</td>
-        <td>{{$detail->physically_disabled}}</td>
-        <td>{{$detail->discipline}}</td>
+    	<td><a href="/update/{{$user_details->emp_id}}">{{$user_details->emp_id}}</a></td>
+    	<td>{{$user_details->name}}</td>
+    	<td>{{$user_details->emp_type}}</td>
+    	<td>{{$user_details->caste}}</td>
+        <td>{{$user_details->dob}}</td>
+        <td>{{$user_details->religion}}</td>
+        <td>{{$user_details->aadhaar}}</td>
+        <td>{{$user_details->physically_disabled}}</td>
+        <td>{{$user_details->discipline}}</td>
    </tr>
     	@endforeach
     </tbody>

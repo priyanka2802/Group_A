@@ -48,4 +48,13 @@ class HomepageController extends Controller
         // dd($user_details);
         return view('approving.approving', compact('user_details'));
     }
+
+    public function showuserdetails($id) {
+        $user_details = DB::select("
+            SELECT * FROM users WHERE emp_id=?
+        ", array($id));
+        $user_details = $user_details[0];
+       // dd ($user_details);
+        return view('admin.applicantedit', compact('user_details'));
+    }
 }
