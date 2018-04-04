@@ -105,7 +105,7 @@
                                 </div>
                                 <div class="radio">
                                   <label for="emp_type" class="form-check-label ">
-                                    <input type="radio" id="Recommending" name="emp_type" value="recommending" class="form-check-input">Recommending Recommending
+                                    <input type="radio" id="Recommending" name="emp_type" value="recommending" class="form-check-input">Recommending Authority
                                   </label>
                                 </div>
                                 <div class="radio">

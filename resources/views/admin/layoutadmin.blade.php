@@ -24,7 +24,7 @@
     <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
+    
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     
 </head>
@@ -111,28 +111,13 @@
                     <li class="menu-item">
                         <a href="calendar" > <i class="menu-icon fa fa-table"></i>Calendar</a>
                     </li>
+                    <li class="menu-item">
+                        <a href="search" > <i class="menu-icon fa fa-search"></i>Search</a>
+                    </li>
                     
                     
                    
                     
-                    <h3 class="menu-title">Search By</h3><!-- /.menu-title -->
-                    <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-search"></i>Name
-                        </a>
-                    </li>
-
-                    <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-search"></i>Name
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-search"></i>Name
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-search"></i>Name
-                        </a>
-                    </li>
                     
                     
                 </ul>
@@ -281,6 +266,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
     <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>

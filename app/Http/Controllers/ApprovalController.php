@@ -12,7 +12,7 @@ class ApprovalController extends Controller
     //to show pending leaves for approval.
     public function showpendingapproval() {
     	$user_details = DB::select("
-			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Recommended'
+			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Recommended' order by start_date desc
     	");
         // dd($user_details);
     	return view('approving.leavependingapproval', compact('user_details'));
@@ -21,7 +21,7 @@ class ApprovalController extends Controller
     //to show approved leaves.
     public function showapprovedleaves() {
     	$user_details = DB::select("
-			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Approved'
+			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Approved' order by start_date desc
     	");
         // dd($user_details);
     	return view('approving.leaveapproved', compact('user_details'));
@@ -30,7 +30,7 @@ class ApprovalController extends Controller
     //to show rejected leaves.
     public function showrejectedleaves() {
     	$user_details = DB::select("
-			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Rejected'
+			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Rejected' order by start_date desc
     	");
         // dd($user_details);
     	return view('approving.leaverejected', compact('user_details'));
@@ -53,7 +53,7 @@ class ApprovalController extends Controller
         ", array($id));
 
         $user_mail = DB::select("
-			SELECT users.emp_id, users.name, users.email FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE casualleaves.ID = ?
+			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE casualleaves.ID = ?
         ", array($id));
         // dd($user_mail[0]->name);
 
@@ -97,10 +97,22 @@ class ApprovalController extends Controller
             UPDATE leavebalances SET clbalance = ? WHERE emp_id = ?  
         ", array($clbalance-$num_days+$counter, $user_mail[0]->emp_id));
 
+        $admin_mail = DB::select("
+            SELECT name, email FROM users WHERE emp_type = 'Admin'
+        ");
+
         //mail.
-        Mail::send(['text'=>'mail/mailapproved'],['name','LeaveManagement'],function($message) use ($user_mail)
+        $data = array('name'=>$user_mail[0]->name,'id'=>$user_mail[0]->emp_id,'purpose'=>$user_mail[0]->purpose,'date'=>$user_mail[0]->start_date,'days'=>$user_mail[0]->no_of_days,'contact'=>$user_mail[0]->contact_no, 'Recommending'=>$user_mail[0]->recommending,'Approving'=>$user_mail[0]->approving);
+
+        Mail::send(['text'=>'mail/mailapproved'],$data,function($message) use ($user_mail)
         {
                 $message->to($user_mail[0]->email,$user_mail[0]->name)->subject('Leave Approved');
+                $message->from('leavemanageriiti@gmail.com','Leave Manager');
+        });
+
+        Mail::send(['text'=>'mail/mailapproved'],$data,function($message) use ($admin_mail)
+        {
+                $message->to($admin_mail[0]->email,$admin_mail[0]->name)->subject('Leave Approved');
                 $message->from('leavemanageriiti@gmail.com','Leave Manager');
         });
 
@@ -117,14 +129,26 @@ class ApprovalController extends Controller
         // dd($id);
 
         $user_mail = DB::select("
-			SELECT users.name, users.email FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE casualleaves.ID = ?
+			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE casualleaves.ID = ?
         ", array($id));
         // dd($user_mail[0]->name);
 
         //mail.
-        Mail::send(['text'=>'mail/mailrejected'],['name','LeaveManagement'],function($message) use ($user_mail)
+
+        $admin_mail = DB::select("
+            SELECT name, email FROM users WHERE emp_type = 'Admin'
+        ");
+        $data = array('name'=>$user_mail[0]->name,'id'=>$user_mail[0]->emp_id,'purpose'=>$user_mail[0]->purpose,'date'=>$user_mail[0]->start_date,'days'=>$user_mail[0]->no_of_days,'contact'=>$user_mail[0]->contact_no, 'Recommending'=>$user_mail[0]->recommending,'Approving'=>$user_mail[0]->approving);
+
+        Mail::send(['text'=>'mail/mailrejected'],$data,function($message) use ($user_mail)
         {
                 $message->to($user_mail[0]->email,$user_mail[0]->name)->subject('Leave Rejected!');
+                $message->from('leavemanageriiti@gmail.com','Leave Manager');
+        });
+
+        Mail::send(['text'=>'mail/mailrejected'],$data,function($message) use ($admin_mail)
+        {
+                $message->to($admin_mail[0]->email,$admin_mail[0]->name)->subject('Leave Rejected');
                 $message->from('leavemanageriiti@gmail.com','Leave Manager');
         });
 

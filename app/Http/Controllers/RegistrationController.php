@@ -109,8 +109,6 @@ class RegistrationController extends Controller
 
     	//FOR AUTHENTICATION PURPOSE.
     	User::insert_into_user(request()->all(),$name,$disability_pic,$achievement_pic,$pan_pic,$aadhaar_pic,$caste_pic);
-
-        Recommend::insertintorecommend(request()->all(),$name,$disability_pic,$achievement_pic,$pan_pic,$aadhaar_pic);
   //  return back()->with('success','Image Upload successfully');
 
 

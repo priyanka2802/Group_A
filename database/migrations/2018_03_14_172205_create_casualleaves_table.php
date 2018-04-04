@@ -22,7 +22,9 @@ class CreateCasualLeavesTable extends Migration
                     end_date date,
                     purpose text,
                     contact_no bigint,
-                    status text
+                    status text,
+                    approving varchar(30),
+                    recommending varchar(30)
                 );
             ");
     }

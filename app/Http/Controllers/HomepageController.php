@@ -23,11 +23,18 @@ class HomepageController extends Controller
         // dd($user_details);
         return view('applicant.user', compact('user_details'));
     }
+    public function showall()
+    {
+        $details = DB::select("
+            SELECT * FROM users");
+        return view('search',compact('details'));
+    }
+
 
     //to show the recommending authority homepage.
     public function showrecommend() {
     	$user_details = DB::select("
-			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id
+			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id order by start_date desc
     	");
         // dd($user_details);
     	return view('recommending.recommend', compact('user_details'));
@@ -36,9 +43,17 @@ class HomepageController extends Controller
     //to show the approving authority homepage.
     public function showapproval() {
     	$user_details = DB::select("
-            SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id
+            SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id order by start_date desc
         ");
         // dd($user_details);
         return view('approving.approving', compact('user_details'));
+    }
+
+    public function show_leaves_history() {
+        $user_details = DB::select("
+            SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE users.emp_id=?
+        order by start_date desc", array(auth()->id()));
+        // dd($user_details);
+        return view('applicant.leave_history', compact('user_details'));
     }
 }

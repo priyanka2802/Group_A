@@ -38,6 +38,8 @@ class User extends Authenticatable
         return $details;
     }
 
+    
+
     //to insert info into users table.
 
     public static function insert_into_user($user,$p,$disability_pic,$achievement_pic,$pan_pic,  $aadhaar_pic,$caste_pic) {

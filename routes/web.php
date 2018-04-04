@@ -18,7 +18,14 @@ Route::get('/calendar', function() {
     return view('calendar');
 });
 
+Route::get('/search', 'HomepageController@showall')->name('homeAdmin');
+
 Route::get('/clform', 'CasualleaveController@show');
+
+Route::post('/delete', 'AdminController@delete_user');
+
+
+Route::get('/leave_history', 'HomepageController@show_leaves_history');
 
 Route::get('/user', 'HomepageController@showuser')->name('homeGeneral');
 
