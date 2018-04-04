@@ -12,7 +12,7 @@ class ApprovalController extends Controller
     //to show pending leaves for approval.
     public function showpendingapproval() {
     	$user_details = DB::select("
-			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Recommended'
+			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Recommended' order by start_date desc
     	");
         // dd($user_details);
     	return view('approving.leavependingapproval', compact('user_details'));
@@ -21,7 +21,7 @@ class ApprovalController extends Controller
     //to show approved leaves.
     public function showapprovedleaves() {
     	$user_details = DB::select("
-			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Approved'
+			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Approved' order by start_date desc
     	");
         // dd($user_details);
     	return view('approving.leaveapproved', compact('user_details'));
@@ -30,7 +30,7 @@ class ApprovalController extends Controller
     //to show rejected leaves.
     public function showrejectedleaves() {
     	$user_details = DB::select("
-			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Rejected'
+			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Rejected' order by start_date desc
     	");
         // dd($user_details);
     	return view('approving.leaverejected', compact('user_details'));
@@ -60,7 +60,7 @@ class ApprovalController extends Controller
             SELECT name, email FROM users WHERE emp_type = 'Admin'
         ");
         //mail.
-        $data = array('name'=>$user_mail[0]->name,'id'=>$user_mail[0]->emp_id,'purpose'=>$user_mail[0]->purpose,'date'=>$user_mail[0]->start_date,'days'=>$user_mail[0]->no_of_days,'contact'=>$user_mail[0]->contact_no);
+        $data = array('name'=>$user_mail[0]->name,'id'=>$user_mail[0]->emp_id,'purpose'=>$user_mail[0]->purpose,'date'=>$user_mail[0]->start_date,'days'=>$user_mail[0]->no_of_days,'contact'=>$user_mail[0]->contact_no, 'Recommending'=>$user_mail[0]->recommending,'Approving'=>$user_mail[0]->approving);
 
         Mail::send(['text'=>'mail/mailapproved'],$data,function($message) use ($user_mail)
         {
@@ -96,7 +96,7 @@ class ApprovalController extends Controller
         $admin_mail = DB::select("
             SELECT name, email FROM users WHERE emp_type = 'Admin'
         ");
-        $data = array('name'=>$user_mail[0]->name,'id'=>$user_mail[0]->emp_id,'purpose'=>$user_mail[0]->purpose,'date'=>$user_mail[0]->start_date,'days'=>$user_mail[0]->no_of_days,'contact'=>$user_mail[0]->contact_no);
+        $data = array('name'=>$user_mail[0]->name,'id'=>$user_mail[0]->emp_id,'purpose'=>$user_mail[0]->purpose,'date'=>$user_mail[0]->start_date,'days'=>$user_mail[0]->no_of_days,'contact'=>$user_mail[0]->contact_no, 'Recommending'=>$user_mail[0]->recommending,'Approving'=>$user_mail[0]->approving);
 
         Mail::send(['text'=>'mail/mailrejected'],$data,function($message) use ($user_mail)
         {

@@ -7,7 +7,7 @@
 				<label for="start_date">Start Date (of leave)</label><br>
 				<input type="date" id="start_date" name="start_date" required>
 				<br><br>
-				<label for="num_days">Number Of Days</label><br>
+				<label for="num_days">Number Of Days(Excluding national holidays)</label><br>
 				<input type="number" id="num_days" name="num_days" required>
 				<br><br>
 				<label for="purpose">Purpose Of Leave</label><br>
@@ -23,5 +23,6 @@
 				<input type="text" id="approving" name="approving" required>
 				<br><br>
 				<button type="submit" class="btn btn-primary">Submit</button>
+				@include('errors.errors')
 		</form>
 @endsection
