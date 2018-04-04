@@ -33,6 +33,7 @@ class User extends Authenticatable
         $details = DB::select("
             SELECT * FROM users WHERE id = ?
         ", array($id));
+        // dd($details);
         $details = $details[0];
         return $details;
     }

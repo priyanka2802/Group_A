@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecommendsTable extends Migration
+class CreateLeavebalancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,20 @@ class CreateRecommendsTable extends Migration
     public function up()
     {
         DB::statement("
-            CREATE TABLE recommends(
+            CREATE TABLE leavebalances (
                 ID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
                 emp_id varchar(20) UNIQUE,
-                name varchar(30),
-                email varchar(30) UNIQUE,
-                discipline varchar(20)
+                clbalance int,
+                specialcl int,
+                onduty int,
+                hpl int,
+                el int,
+                vacation int,
+                eol int,
+                maternity int,
+                paternity int,
+                study int,
+                td TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
         ");
     }
@@ -31,6 +39,6 @@ class CreateRecommendsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recommends');
+        Schema::dropIfExists('leavebalances');
     }
 }

@@ -321,4 +321,6 @@ a {
         @yield ('footer')
     </div>
 </body>
+
+
 </html>

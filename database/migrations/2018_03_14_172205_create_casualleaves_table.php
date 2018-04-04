@@ -19,6 +19,7 @@ class CreateCasualLeavesTable extends Migration
                     emp_id varchar(20),
                     no_of_days int,
                     start_date date,
+                    end_date date,
                     purpose text,
                     contact_no bigint,
                     status text

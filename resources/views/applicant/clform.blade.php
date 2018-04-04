@@ -17,5 +17,6 @@
 				<input type="number" id="contact" name="contact" required>
 				<br><br>
 				<button type="submit" class="btn btn-primary">Submit</button>
+				@include('errors.errors')
 		</form>
 @endsection

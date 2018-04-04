@@ -13,7 +13,31 @@ class CasualleaveController extends Controller
 	//to store every casual leave in the table.
 
     public function store() {
+
+
     	$user_details = User::getUserDetails(auth()->id());
+
+        $num_days = request()->all()['num_days'];
+
+        $clbalance = DB::select("
+            SELECT clbalance FROM leavebalances WHERE emp_id = ?
+        ", array($user_details->emp_id));
+
+        $clbalance = $clbalance[0]->clbalance;
+
+        if($num_days>5 && $clbalance-$num_days >= 0)
+        {
+            return back()->withErrors([
+                'message' => 'You cannot take more than 5 day leave at a time!'
+            ]);
+        }
+        else if($clbalance-$num_days < 0)
+        {
+            return back()->withErrors([
+                'message' => 'You have exceeded the limit!'
+            ]);
+        }
+
 
         $emp_type = $user_details->emp_type;
     	

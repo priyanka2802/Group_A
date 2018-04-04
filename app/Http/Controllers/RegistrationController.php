@@ -113,6 +113,7 @@ class RegistrationController extends Controller
         Recommend::insertintorecommend(request()->all(),$name,$disability_pic,$achievement_pic,$pan_pic,$aadhaar_pic);
   //  return back()->with('success','Image Upload successfully');
 
+
     	return redirect()->route('homeAdmin');
     
     } 

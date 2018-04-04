@@ -1,8 +1,9 @@
+
 -- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
 --
 -- Host: localhost    Database: leave
 -- ------------------------------------------------------
--- Server version	5.7.21-0ubuntu0.16.04.1
+-- Server version 5.7.21-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -27,6 +28,7 @@ CREATE TABLE `casualleaves` (
   `emp_id` varchar(20) DEFAULT NULL,
   `no_of_days` int(11) DEFAULT NULL,
   `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
   `purpose` text,
   `contact_no` bigint(20) DEFAULT NULL,
   `status` text,
@@ -40,7 +42,7 @@ CREATE TABLE `casualleaves` (
 
 LOCK TABLES `casualleaves` WRITE;
 /*!40000 ALTER TABLE `casualleaves` DISABLE KEYS */;
-INSERT INTO `casualleaves` VALUES (2,'8',7,'2018-03-13','jj',9,'Approved'),(3,'8',8,'2018-03-08','axaxu',8,'Rejected'),(4,'88',1,'2018-03-07','dghdgh',11,'Reverted Back'),(6,'8',8,'2018-03-02','hbhjbbbii',898799,'Approved'),(7,'8',8998,'2018-03-02','uiui',98,'Recommended'),(8,'8',898,'2018-03-02','hbhhshxjskk',98,'Rejected'),(9,'9',8,'2018-03-09','jhiuuiiu',899,'Recommended');
+INSERT INTO `casualleaves` VALUES (2,'8',7,'2018-03-13', NULL,'jj',9,'Approved'),(3,'8',8,'2018-03-08', NULL,'axaxu',8,'Rejected'),(4,'88',1,'2018-03-07', NULL,'dghdgh',11,'Reverted Back'),(6,'8',8,'2018-03-02', NULL,'hbhjbbbii',898799,'Approved'),(7,'8',8998,'2018-03-02', NULL,'uiui',98,'Recommended'),(8,'8',898,'2018-03-02', NULL,'hbhhshxjskk',98,'Rejected'),(9,'9',8,'2018-03-09', NULL,'jhiuuiiu',899,'Recommended');
 /*!40000 ALTER TABLE `casualleaves` ENABLE KEYS */;
 UNLOCK TABLES;
 
