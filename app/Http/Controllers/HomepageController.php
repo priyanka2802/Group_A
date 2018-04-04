@@ -48,4 +48,12 @@ class HomepageController extends Controller
         // dd($user_details);
         return view('approving.approving', compact('user_details'));
     }
+
+    public function show_leaves_history() {
+        $user_details = DB::select("
+            SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE users.emp_id=?
+        ", array(auth()->id()));
+        // dd($user_details);
+        return view('applicant.leave_history', compact('user_details'));
+    }
 }

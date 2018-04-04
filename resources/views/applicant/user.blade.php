@@ -1,37 +1,30 @@
-@extends ('layouts.layout')
-
-
+@extends('applicant.applicantlayout')
 @section('content')
-	
-	<div class="sidenav">
-  <a href="#" style="text-align: center;">
-  <img src="/images/{{ $user_details->photo }}" alt="user Image" height="200px" width="150/px"/>
-  </a>
-  <a href="#">{{ $user_details->name }}</a>
-  <a href="#"><i class="fa fa-cog"></i>Profile Update</a>
-  <a href="/clform"><i class="fa fa-user"></i>Apply for Leave</a>
-  <a href="#"><i class="fa fa-shopping-cart"></i>Check Leave Balance</a>
-  <a href="#"><i class="fa fa-refresh"></i>Leave History</a>
-  
-  <a href="/logout"><i class="fa fa-sign-out"></i>Logout</a>
-  </div>
 
-<div class="sidenavright">
-
-  </div>
+<div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            
+         <div class="content mt-4">
+            <div class="animated fadeIn">
 
 
-<div style="margin:20px;padding:10px;text-align:center;color:black">
-  <h2>
-    Your Profile 
-  </h2>
-</div>
-  <div class="container">
-  <table class="table table-striped">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">User</strong>
+                        </div>
+			<table class="table">
     <tbody>
       <tr>
-        <td style="font-weight: bold;">Name</td>
-        <td>{{ $user_details->name }}</td>
+        <td><img src="/images/{{ $user_details->photo }}"</td>
+        <td ><span style="font-size: 100px  ">{{ $user_details->name }}</span></td>
       </tr>
       <tr>
         <td style="font-weight: bold;">Employee Code</td>
@@ -115,6 +108,15 @@
       </tr>
     </tbody>
   </table>
-</div>
-@endsection
 
+                          </div>
+		
+
+            </div>
+    </div>
+  </div>
+ </div>
+ </div> <!-- .card -->
+</div><!
+
+@endsection

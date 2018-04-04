@@ -36,7 +36,6 @@
                           <h2>Search By</h2>
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br>
-<div class="table-responsive">
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -49,7 +48,6 @@
         <th>Aadhaar</th>
         <th>Disability</th>
         <th>Discipline</th>
-        
     </tr>
     </thead>
     <tbody id="myTable">
@@ -65,12 +63,14 @@
         <td>{{$detail->aadhaar}}</td>
         <td>{{$detail->physically_disabled}}</td>
         <td>{{$detail->discipline}}</td>
-   </tr>
+        
+
+    </tr>
     	@endforeach
     </tbody>
     </tbody>
   </table>
- </div> 
+  
                     </div>
                 </div>
 

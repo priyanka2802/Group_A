@@ -124,7 +124,7 @@
                         
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="dob" class=" form-control-label">Date Of Birth</label></div>
-                            <div class="col-12 col-md-9"><input placeholder="yyyy/mm/dd" type="date" name="dob" class="form-control">
+                            <div class="col-12 col-md-9"><input placeholder="yyyy/mm/dd" type="text" name="dob" class="form-control">
                             </div>
                           </div>
                         
@@ -275,5 +275,18 @@
             </div>
     </div> <!-- .card -->
 </div><!--/.col-->
+<script>
+    $(document).ready(function(){
+      var date_input=$('input[name="dob"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'yyyy/mm/dd',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
 @endsection
 

@@ -25,12 +25,23 @@ class RecommendController extends Controller
         ", array($id));
 
         $approval_mail = DB::select("
-            SELECT users.name, users.email FROM users WHERE emp_type = 'approval'
+            SELECT * FROM users WHERE emp_type = 'approval'
         ");
+
+        $admin_mail = DB::select("
+            SELECT name, email FROM users WHERE emp_type = 'Admin'
+        ");
+
+        $data = array('name'=>$user_mail[0]->name,'id'=>$user_mail[0]->emp_id,'purpose'=>$user_mail[0]->purpose,'date'=>$user_mail[0]->start_date,'days'=>$user_mail[0]->no_of_days,'contact'=>$user_mail[0]->contact_no);
         // dd($user_mail[0]->name);
+        Mail::send(['text'=>'mail/mailrecommended'],$data,function($message) use ($admin_mail)
+        {
+                $message->to($admin_mail[0]->email,$admin_mail[0]->name)->subject('Leave Recommended');
+                $message->from('leavemanageriiti@gmail.com','Leave Manager');
+        });
 
         //mail.
-        Mail::send(['text'=>'mail/mailrecommended'],['name','LeaveManagement'],function($message) use ($approval_mail)
+        Mail::send(['text'=>'mail/mailrecommended'],$data,function($message) use ($approval_mail)
         {
                 $message->to($approval_mail[0]->email,$approval_mail[0]->name)->subject('Leave Recommended');
                 $message->from('leavemanageriiti@gmail.com','Leave Manager');
@@ -48,14 +59,26 @@ class RecommendController extends Controller
         ", array($id));
 
         $user_mail = DB::select("
-            SELECT users.name, users.email FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE casualleaves.ID = ?
+            SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE casualleaves.ID = ?
         ", array($id));
+
+        $admin_mail = DB::select("
+            SELECT name, email FROM users WHERE emp_type = 'Admin'
+        ");
+
+        $data = array('name'=>$user_mail[0]->name,'id'=>$user_mail[0]->emp_id,'purpose'=>$user_mail[0]->purpose,'date'=>$user_mail[0]->start_date,'days'=>$user_mail[0]->no_of_days,'contact'=>$user_mail[0]->contact_no);
+        // dd($user_mail[0]->name);
+        Mail::send(['text'=>'mail/mailreverted'],$data,function($message) use ($admin_mail)
+        {
+                $message->to($admin_mail[0]->email,$admin_mail[0]->name)->subject('Leave Reverted Back');
+                $message->from('leavemanageriiti@gmail.com','Leave Manager');
+        });
         // dd($user_mail[0]->name);
 
         //mail.
-        Mail::send(['text'=>'mail/mailreverted'],['name','LeaveManagement'],function($message) use ($user_mail)
+        Mail::send(['text'=>'mail/mailreverted'],$data,function($message) use ($user_mail)
         {
-                $message->to($user_mail[0]->email,$user_mail[0]->name)->subject('Leave Reverted Back!');
+                $message->to($user_mail[0]->email,$user_mail[0]->name)->subject('Leave Reverted Back');
                 $message->from('leavemanageriiti@gmail.com','Leave Manager');
         });
 

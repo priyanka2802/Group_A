@@ -16,6 +16,12 @@
 				<label for="contact">Contact Number (during leave)</label><br>
 				<input type="number" id="contact" name="contact" required>
 				<br><br>
+				<label for="recommending">Recommending Authority</label><br>
+				<input type="text" id="recommending" name="recommending" required>
+				<br><br>
+				<label for="approving">Approving Authority</label><br>
+				<input type="text" id="approving" name="approving" required>
+				<br><br>
 				<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
 @endsection
