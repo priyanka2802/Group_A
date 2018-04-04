@@ -60,9 +60,13 @@ class HomepageController extends Controller
     }
 
     public function show_leaves_history() {
+        $emp_id = DB::select("
+            SELECT emp_id FROM users WHERE id = ?
+        ", array(auth()->id()));
+
         $user_details = DB::select("
             SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE users.emp_id=?
-        order by start_date desc", array(auth()->id()));
+        order by casualleaves.start_date desc", array($emp_id[0]->emp_id));
         // dd($user_details);
         return view('applicant.leave_history', compact('user_details'));
 

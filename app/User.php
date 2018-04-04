@@ -40,7 +40,7 @@ class User extends Authenticatable
     
     public static function updateUser($user) {
 
-        $details = DB::select("
+        DB::update("
             UPDATE users SET 
             emp_type      = ?,
             email         = ?,
@@ -64,8 +64,8 @@ class User extends Authenticatable
             children      = ?
             where emp_id = ?
  
-        ", array($user['emp_type'],  $user['email'],$user['dob'],$user['sex'],$user['address'],$user['religion'],$user['caste'],$user['contact'],$user['category'],$user['physically_disabled'],$user['pnt_no'],$user['appointed_on_quota'],$user['discipline'],$user['achievements'],$user['hometown'],$user['pan_no'],$user['aadhaar'],$user['salary'],$user['marital_status'],$user['children']),$user['emp_id']);
-        $details = $details[0];
+        ", array($user['emp_type'], $user['email'],  $user['dob'], $user['sex'], $user['address'], $user['religion'], $user['caste'], $user['contact'], $user['category'], $user['physically_disabled'], $user['pnt_no'], $user['appointed_on_quota'], $user['discipline'], $user['achievements'], $user['hometown'], $user['pan_no'], $user['aadhaar'], $user['salary'], $user['marital_status'], $user['children'], $user['emp_id']));
+        
 
         
     }

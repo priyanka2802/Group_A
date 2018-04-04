@@ -15,6 +15,8 @@ class RegistrationController extends Controller
        
 
         User::updateUser(request()->all());
+
+        return redirect()->route('homeAdmin'); 
             
         
     }
