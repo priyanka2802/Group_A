@@ -36,7 +36,6 @@
                           <h2>Search By</h2>
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br>
-<div class="table-responsive">
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -49,13 +48,13 @@
         <th>Aadhaar</th>
         <th>Disability</th>
         <th>Discipline</th>
-        
     </tr>
     </thead>
     <tbody id="myTable">
     	
     	@foreach( $details as $user_details)
     <tr>
+<<<<<<< HEAD
     	<td><a href="/update/{{$user_details->emp_id}}">{{$user_details->emp_id}}</a></td>
     	<td>{{$user_details->name}}</td>
     	<td>{{$user_details->emp_type}}</td>
@@ -66,11 +65,25 @@
         <td>{{$user_details->physically_disabled}}</td>
         <td>{{$user_details->discipline}}</td>
    </tr>
+=======
+    	<td>{{$detail->emp_id}}</td>
+    	<td>{{$detail->name}}</td>
+    	<td>{{$detail->emp_type}}</td>
+    	<td>{{$detail->caste}}</td>
+        <td>{{$detail->dob}}</td>
+        <td>{{$detail->religion}}</td>
+        <td>{{$detail->aadhaar}}</td>
+        <td>{{$detail->physically_disabled}}</td>
+        <td>{{$detail->discipline}}</td>
+        
+
+    </tr>
+>>>>>>> de0d19597635ef8c4ad393d4028244bf74ce5e16
     	@endforeach
     </tbody>
     </tbody>
   </table>
- </div> 
+  
                     </div>
                 </div>
 

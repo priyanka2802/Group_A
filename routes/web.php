@@ -30,6 +30,11 @@ Route::get('/search', 'HomepageController@showall')->name('homeAdmin');
 
 Route::get('/clform', 'CasualleaveController@show');
 
+Route::post('/delete', 'AdminController@delete_user');
+
+
+Route::get('/leave_history', 'HomepageController@show_leaves_history');
+
 Route::get('/user', 'HomepageController@showuser')->name('homeGeneral');
 
 Route::post('/clform', 'CasualleaveController@store');
@@ -72,7 +77,11 @@ Route::get('/approval/{user_details}', 'ApprovalController@showleavedetails');
 
 Route::get('/approved/{user_details}', 'ApprovalController@updatestatus1');
 
+<<<<<<< HEAD
 Route::get('/rejected/{user_details}', 'ApprovalController@updatestatus2');
 
 Route::get('/update/{user_details}', 'HomepageController@showuserdetails');
 
+=======
+Route::get('/rejected/{user_details}', 'ApprovalController@updatestatus2');
+>>>>>>> de0d19597635ef8c4ad393d4028244bf74ce5e16
