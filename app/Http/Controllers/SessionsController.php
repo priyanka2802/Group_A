@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use App\CasualLeave;
 
 class SessionsController extends Controller
 {
@@ -29,6 +30,10 @@ class SessionsController extends Controller
         $user_details = User::getUserDetails(auth()->id());
         // dd($user_details);
         $emp_type = $user_details->emp_type;
+
+
+        //call trigger to update cl.
+        CasualLeave::updatecltrigger();
 
         if($emp_type == "general")
     	   return redirect()->route('homeGeneral');

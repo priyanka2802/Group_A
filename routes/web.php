@@ -77,10 +77,8 @@ Route::get('/approval/{user_details}', 'ApprovalController@showleavedetails');
 
 Route::get('/approved/{user_details}', 'ApprovalController@updatestatus1');
 
-
-Route::get('/rejected/{user_details}', 'ApprovalController@updatestatus2');
-
 Route::get('/update/{user_details}', 'HomepageController@showuserdetails');
+
 
 Route::get('/rejected/{user_details}', 'ApprovalController@updatestatus2');
 

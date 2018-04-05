@@ -15,6 +15,8 @@ class RegistrationController extends Controller
        
 
         User::updateUser(request()->all());
+
+        return redirect()->route('homeAdmin'); 
             
         
     }
@@ -118,6 +120,13 @@ class RegistrationController extends Controller
     	//FOR AUTHENTICATION PURPOSE.
     	User::insert_into_user(request()->all(),$name,$disability_pic,$achievement_pic,$pan_pic,$aadhaar_pic,$caste_pic);
   //  return back()->with('success','Image Upload successfully');
+
+        //insert into leavebalances table.
+        $user = request()->all();
+        DB::statement("
+            INSERT INTO leavebalances (emp_id, clbalance) VALUES (?,?) 
+        ", array($user['emp_id'], $user['cl_balance']));
+
 
     	return redirect()->route('homeAdmin');
     

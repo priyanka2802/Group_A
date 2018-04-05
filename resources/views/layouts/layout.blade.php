@@ -156,7 +156,7 @@ a {
 }
 
 .wrapper {
-  width: 100%;
+  width: 80%;
   max-width: 1200px;
   margin: 2rem auto;
   position: relative;
@@ -324,4 +324,6 @@ a {
         @yield ('footer')
     </div>
 </body>
+
+
 </html>

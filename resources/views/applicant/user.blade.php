@@ -1,4 +1,5 @@
 @extends('applicant.applicantlayout')
+
 @section('content')
 
 <div class="breadcrumbs">
@@ -117,6 +118,6 @@
   </div>
  </div>
  </div> <!-- .card -->
-</div><!
+</div>
 
 @endsection

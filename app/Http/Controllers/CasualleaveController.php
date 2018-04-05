@@ -13,7 +13,31 @@ class CasualleaveController extends Controller
 	//to store every casual leave in the table.
 
     public function store() {
+
+
     	$user_details = User::getUserDetails(auth()->id());
+
+        $num_days = request()->all()['num_days'];
+
+        $clbalance = DB::select("
+            SELECT clbalance FROM leavebalances WHERE emp_id = ?
+        ", array($user_details->emp_id));
+
+        $clbalance = $clbalance[0]->clbalance;
+
+        if($num_days>5 && $clbalance-$num_days >= 0)
+        {
+            return back()->withErrors([
+                'message' => 'You cannot take more than 5 day leave at a time!'
+            ]);
+        }
+        else if($clbalance-$num_days < 0)
+        {
+            return back()->withErrors([
+                'message' => 'You have exceeded the limit!'
+            ]);
+        }
+
 
         $emp_type = $user_details->emp_type;
     	
@@ -94,7 +118,10 @@ class CasualleaveController extends Controller
                 }
                 Casualleave::insertIntoCasualleaves($user_details, request()->all());
 
-                
+                 $admin_mail = DB::select("
+                    SELECT name, email FROM users WHERE emp_type = 'Admin'
+                ");
+                 // dd($admin_mail);
             // dd($user_mail[0]->name);
 
             //mail.
@@ -104,9 +131,9 @@ class CasualleaveController extends Controller
                     $message->from('leavemanageriiti@gmail.com','Leave Manager');
             });
 
-            Mail::send(['text'=>'mail/mailrecommended'],$data,function($message) use ($approval_mail)
+            Mail::send(['text'=>'mail/mailrecommended'],$data,function($message) use ($approve_details)
             {
-                    $message->to($recommend_details[0]->email,$recommend_details[0]->name)->subject('Leave Recommended');
+                    $message->to($approve_details[0]->email,$approve_details[0]->name)->subject('Leave Recommended');
                     $message->from('leavemanageriiti@gmail.com','Leave Manager');
             });
 
