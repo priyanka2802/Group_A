@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: leave
 -- ------------------------------------------------------
--- Server version	5.7.21-0ubuntu0.16.04.1
+-- Server version	5.7.21-0ubuntu0.17.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -27,11 +27,12 @@ CREATE TABLE `casualleaves` (
   `emp_id` varchar(20) DEFAULT NULL,
   `no_of_days` int(11) DEFAULT NULL,
   `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
   `purpose` text,
   `contact_no` bigint(20) DEFAULT NULL,
   `status` text,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,8 +41,69 @@ CREATE TABLE `casualleaves` (
 
 LOCK TABLES `casualleaves` WRITE;
 /*!40000 ALTER TABLE `casualleaves` DISABLE KEYS */;
-INSERT INTO `casualleaves` VALUES (2,'8',7,'2018-03-13','jj',9,'Approved'),(3,'8',8,'2018-03-08','axaxu',8,'Rejected'),(4,'88',1,'2018-03-07','dghdgh',11,'Reverted Back'),(6,'8',8,'2018-03-02','hbhjbbbii',898799,'Approved'),(7,'8',8998,'2018-03-02','uiui',98,'Recommended'),(8,'8',898,'2018-03-02','hbhhshxjskk',98,'Rejected'),(9,'9',8,'2018-03-09','jhiuuiiu',899,'Recommended');
+INSERT INTO `casualleaves` VALUES (2,'8',7,'2018-03-13',NULL,'jj',9,'Approved'),(3,'8',8,'2018-03-08',NULL,'axaxu',8,'Rejected'),(4,'88',1,'2018-03-07',NULL,'dghdgh',11,'Reverted Back'),(6,'8',8,'2018-03-02',NULL,'hbhjbbbii',898799,'Approved'),(7,'8',8998,'2018-03-02',NULL,'uiui',98,'Approved'),(8,'8',898,'2018-03-02',NULL,'hbhhshxjskk',98,'Rejected'),(9,'9',8,'2018-03-09',NULL,'jhiuuiiu',899,'Approved'),(10,'8',4,'2018-04-25','2018-04-29','tfyt',5656,'Recommended'),(11,'8',4,'2018-04-25','2018-04-29','po',6776,'Recommended'),(12,'8',4,'2018-04-25','2018-04-28','qhedrfaytaugabb',67567,'Approved');
 /*!40000 ALTER TABLE `casualleaves` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `holidays`
+--
+
+DROP TABLE IF EXISTS `holidays`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `holidays` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Date` date DEFAULT NULL,
+  `Description` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `holidays`
+--
+
+LOCK TABLES `holidays` WRITE;
+/*!40000 ALTER TABLE `holidays` DISABLE KEYS */;
+INSERT INTO `holidays` VALUES (1,'2018-04-27','xgsav'),(2,'2018-04-28','xaxahb');
+/*!40000 ALTER TABLE `holidays` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `leavebalances`
+--
+
+DROP TABLE IF EXISTS `leavebalances`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `leavebalances` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_id` varchar(20) DEFAULT NULL,
+  `clbalance` int(11) DEFAULT NULL,
+  `specialcl` int(11) DEFAULT NULL,
+  `onduty` int(11) DEFAULT NULL,
+  `hpl` int(11) DEFAULT NULL,
+  `el` int(11) DEFAULT NULL,
+  `vacation` int(11) DEFAULT NULL,
+  `eol` int(11) DEFAULT NULL,
+  `maternity` int(11) DEFAULT NULL,
+  `paternity` int(11) DEFAULT NULL,
+  `study` int(11) DEFAULT NULL,
+  `td` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `emp_id` (`emp_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `leavebalances`
+--
+
+LOCK TABLES `leavebalances` WRITE;
+/*!40000 ALTER TABLE `leavebalances` DISABLE KEYS */;
+INSERT INTO `leavebalances` VALUES (1,'8',879,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-04-04 11:34:03');
+/*!40000 ALTER TABLE `leavebalances` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -94,6 +156,34 @@ LOCK TABLES `password_resets` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `recommends`
+--
+
+DROP TABLE IF EXISTS `recommends`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `recommends` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_id` varchar(20) DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
+  `discipline` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `emp_id` (`emp_id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `recommends`
+--
+
+LOCK TABLES `recommends` WRITE;
+/*!40000 ALTER TABLE `recommends` DISABLE KEYS */;
+/*!40000 ALTER TABLE `recommends` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -143,7 +233,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'8','u','recommending','a@b.com','$2y$10$c4P5nctgOmQhuZT1J.jV3e1moYgQMUwzh9N214I39fji/4qQRre7u','0011-11-11','M','l','l','l',99,'l','l','N',9,'l','l','l','l','9',888888888888,9,'l',9,9,'9','yeVUl5Y6aCH7M59iEQ75Dd4pMtLNNv878luqWczPiZxg3Pn938ZVpSpUzU9e','2018-03-14 11:55:12','2018-03-14 11:55:12'),(2,'88','uuuu','general','priyankarotte@gmail.com','$2y$10$bx2GeEOLlab.6hxIm7ittuWf/gOaMprBwyBgfI1/HAYwMY1O8HEu.','0077-07-07','M','jj','j','j',8,'8','8','N',8,'8','8','8','9','8',777777777777,8,'8',8,88,'8','0wEOgk9KrnKIDkXVfmJr5D2ZNkPNCfof5hIwie68dq5Un5NX4AiFY4zg9eGV','2018-03-14 13:22:39','2018-03-14 13:22:39'),(3,'9','9','approval','cse160001057@iiti.ac.in','$2y$10$Js.Qor8vGoB0CTrkEiBNneyMlqIe5qSPXqpZ4bIhEj4xzask9l1ru','0088-08-08','M','8','8','8',8,'8','88','N',8,'8','8','8','8','8',888888888888,8,'8',8,8,'8','v63FhyWETGYn688PN1TftUIpn3tzKJd0DbmTZrDYxf6aorGXrj6e1x3d9LUR','2018-03-15 08:16:29','2018-03-15 08:16:29');
+INSERT INTO `users` VALUES (1,'8','u','recommending','a@b.com','$2y$10$c4P5nctgOmQhuZT1J.jV3e1moYgQMUwzh9N214I39fji/4qQRre7u','0011-11-11','M','l','l','l',99,'l','l','N',9,'l','l','l','l','9',888888888888,9,'l',9,9,'9','oELHBBBUXt5UevwBypmcyH4Sus8ZzwtuSpdNom1XbfdrqnG7dCjJh7asJ3TU','2018-03-14 11:55:12','2018-03-14 11:55:12'),(2,'88','uuuu','general','priyankarotte@gmail.com','$2y$10$bx2GeEOLlab.6hxIm7ittuWf/gOaMprBwyBgfI1/HAYwMY1O8HEu.','0077-07-07','M','jj','j','j',8,'8','8','N',8,'8','8','8','9','8',777777777777,8,'8',8,88,'8','0wEOgk9KrnKIDkXVfmJr5D2ZNkPNCfof5hIwie68dq5Un5NX4AiFY4zg9eGV','2018-03-14 13:22:39','2018-03-14 13:22:39'),(3,'9','9','approval','cse160001057@iiti.ac.in','$2y$10$Js.Qor8vGoB0CTrkEiBNneyMlqIe5qSPXqpZ4bIhEj4xzask9l1ru','0088-08-08','M','8','8','8',8,'8','88','N',8,'8','8','8','8','8',888888888888,8,'8',8,8,'8','n9YB3UvC5YJpqHBNoq7Z9zyCfuPxTdzvYL3o91pwqDISJQGZfJSV5AZXc1tw','2018-03-15 08:16:29','2018-03-15 08:16:29');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -156,4 +246,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-15 20:04:29
+-- Dump completed on 2018-04-04 17:32:51
