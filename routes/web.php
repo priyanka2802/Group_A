@@ -32,6 +32,15 @@ Route::get('/clform', 'CasualleaveController@show');
 
 Route::post('/delete', 'AdminController@delete_user');
 
+Route::get('/listofleaves', 'CasualleaveController@showlist');
+
+Route::post('/sclform', 'sclController@store');
+
+Route::post('/studyform', 'studyController@store');
+
+Route::get('/sclform', 'sclController@show');
+
+Route::get('/studyform', 'studyController@show');
 
 Route::get('/leave_history', 'HomepageController@show_leaves_history');
 
