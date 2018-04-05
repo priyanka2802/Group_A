@@ -111,7 +111,7 @@
             <div class="container-fluid">
               <form action="{{ action('RegistrationController@updateUsers') }}" method="post" enctype="multipart/form-data" class="form-horizontal" style="width:100%">
                  {{ csrf_field() }}
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ asset("images/$user_details->photo ") }}" class=""> </div>
+                <div class="col-md-3 col-lg-3 " align="center"> <img  class="img-thumbnail" alt="User Pic" src="{{ asset("images/$user_details->photo ") }}" class=""> </div>
                 <div class="col-md-3 col-lg-3 ">
                     <h1 style="padding:40px;margin:10px;"><center>{{$user_details->salutation}}&nbsp{{$user_details->name}}</center></h1>
                 </div>
@@ -237,7 +237,9 @@
                      <tr>
                         <td>Aadhaar Image
                           </td>
-                        <td><img id="myImg" class="img-responsive" height="250px" weight="250px"  src="{{ asset("images/$user_details->aadhaar_pic ") }}"></td>
+                        <td><img id="myImg" class="img-responsive" height="250px" weight="250px"  src="{{ asset("images/$user_details->aadhaar_pic ") }}">
+
+</td>
                     </tr> 
                     <tr>
                         <td>Pan Image</td>
@@ -256,13 +258,36 @@
                         <td><img id="myImg" class="img-responsive" height="250px" weight="250px" src="{{ asset("images/$user_details->disability_pic") }}" alt="Not Applicable"></td>
                     </tr>  
  
-     <div id="myModal" class="modal">
+      
+ <div id="myModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img01">
   <div id="caption"></div>
 </div>
-      
- 
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+
 
                     </tbody>
                   </table>
