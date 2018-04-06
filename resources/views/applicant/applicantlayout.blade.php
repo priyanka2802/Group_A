@@ -39,8 +39,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#"><h5>{{$user_details->name}}</h5></a>
-                <a class="navbar-brand hidden" href="#"><img src="images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand" href="#"><img style="margin:30px 5px" class="img-responsive" height="100"  width="100" src="{{ URL::asset('images/iit.jpg') }}" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="#"><img style="margin:30px 5px" class="img-responsive" height="100"  width="100" src="{{ URL::asset('images/iit.jpg') }}" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -213,7 +213,7 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="{{ asset("images/$user_details->photo ") }}" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">

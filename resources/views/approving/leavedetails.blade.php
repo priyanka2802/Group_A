@@ -1,23 +1,5 @@
 @extends ('layouts.layout')
 
-@section('nav')
-<br>
-<link href="/css/nav.css" rel="stylesheet"> 
-
-<header role="banner">
-      <nav class="navbar">
-      <div class="container">
-          <ul class="nav">
-              <li><a href="/approval">All</a></li>
-              <li><a href="/leavependingapproval">Pending</a></li>
-              <li><a href="/leaveapproved">Approved</a></li>
-              <li><a href="/leaverejected">Rejected</a></li>
-          </ul>
-      </div>
-      </nav>
-</header>
-<br>
-@endsection
 
 @section('content')
 
