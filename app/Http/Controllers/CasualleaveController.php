@@ -7,6 +7,7 @@ use App\User;
 use App\Casualleave;
 use Illuminate\Support\Facades\DB;
 use Mail;
+use DateTime;
 
 class CasualleaveController extends Controller
 {
@@ -16,6 +17,21 @@ class CasualleaveController extends Controller
 
 
     	$user_details = User::getUserDetails(auth()->id());
+
+        $all_leave_details = DB::select("
+            SELECT * FROM casualleaves WHERE emp_id = ? ORDER BY end_date DESC
+        ", array($user_details->emp_id));
+        
+
+        $date1 = new DateTime(request()->all()['start_date']);
+        $date2 = new DateTime($all_leave_details[0]->end_date);
+        
+        if($date1 <= $date2)
+        {
+            return back()->withErrors([
+                'message' => 'You already have a part of duration of a previous leave active after the above mentioned start date. Please specify a start date so it doesn\'t overlap with a previous leave!'
+            ]);
+        }
 
         $num_days = request()->all()['num_days'];
 

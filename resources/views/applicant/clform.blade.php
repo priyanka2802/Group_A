@@ -4,6 +4,7 @@
 <br><br>
 	<form action="/clform" method="POST">
 			{{ csrf_field() }}
+			@include('errors.errors')
 				<label for="start_date">Start Date (of leave)</label><br>
 				<input type="date" id="start_date" name="start_date" required>
 				<br><br>
@@ -23,6 +24,6 @@
 				<input type="text" id="approving" name="approving" required>
 				<br><br>
 				<button type="submit" class="btn btn-primary">Submit</button>
-				@include('errors.errors')
+				
 		</form>
 @endsection
