@@ -32,12 +32,13 @@ Route::get('/clform', 'CasualleaveController@show');
 
 Route::post('/delete', 'AdminController@delete_user');
 
+Route::get('/odform', 'OnDutyController@show');
 
 Route::get('/leave_history', 'HomepageController@show_leaves_history');
 
 Route::get('/user', 'HomepageController@showuser')->name('homeGeneral');
 
-Route::post('/clform', 'CasualleaveController@store');
+Route::post('/odform', 'OnDutyController@store');
 
 Route::get('/admin', 'HomepageController@showadmin')->name('homeAdmin');
 
