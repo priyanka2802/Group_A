@@ -49,18 +49,12 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="/admin"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href=""{{ url('/admin') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">Elements</h3><!-- /.menu-title -->
                     <li class="menu-item">
-                        <a href="register" > <i class="menu-icon fa fa-user"></i>Create User</a>
+                        <a href="{{ url('/register') }}" > <i class="menu-icon fa fa-user"></i>Create User</a>
                         
-                    </li>
-                    <li class="menu-item">
-
-                        <a href="#" > <i class="menu-icon fa fa-table"></i>Update User</a>
-                        
-
                     </li>
                     <li class="menu-item">
                         <a href="#"  data-toggle="modal" data-target="#myModal" > <i class="menu-icon fa fa-pencil"></i>Delete User</a>
@@ -111,13 +105,13 @@
                         <a href="#" > <i class="menu-icon fa fa-table"></i>Check Status Of Leaves</a>
                     </li>
                     <li class="menu-item">
-                        <a href="calendar" > <i class="menu-icon fa fa-table"></i>Calendar</a>
+                        <a href="{{ url('/calendar') }}" > <i class="menu-icon fa fa-table"></i>Calendar</a>
                     </li>
                     <li class="menu-item">
-                        <a href="search" > <i class="menu-icon fa fa-search"></i>Search</a>
+                        <a href="{{ url('/search') }}" > <i class="menu-icon fa fa-search"></i>Search</a>
                     </li>
                     <li class="menu-item">
-                        <a href="/logout" > <i class="menu-icon fa fa-table"></i>Logout</a>
+                        <a href="{{ url('/logout') }}" > <i class="menu-icon fa fa-table"></i>Logout</a>
                     </li>
                     
                    

@@ -55,7 +55,7 @@
                     </li>
                     <li class="menu-item">
 
-                        <a href="/clform" > <i class="menu-icon fa fa-table"></i>Apply Leave</a>
+                        <a href="/listofleaves" > <i class="menu-icon fa fa-table"></i>Apply Leave</a>
                         
 
                     </li>

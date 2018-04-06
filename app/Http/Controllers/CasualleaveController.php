@@ -160,4 +160,8 @@ class CasualleaveController extends Controller
     public function show() {
     	return view('/applicant/clform');
     }
+	
+	 public function showlist(){
+        return view('/applicant/listofleaves');
+    }
 }
