@@ -79,10 +79,10 @@ class OnDutyController extends Controller
                     Mail::send(['text'=>'mail/ondutyMail'],$data,function($message) use ($admin_mail)
                 {
                         $file = request()->input('pdf_file');
-                        $pdf_file = "Images/".$file;
+                        $pdf_file = "images/".$file;
                         $message->to($admin_mail[0]->email,$admin_mail[0]->name)->subject('Leave Submitted');
                         $message->from('leavemanageriiti@gmail.com','Leave Manager');
-                        //$message->attach(asset($pdf_file));
+                        $message->attach(url($file));
                 });
                     // dd($recommend_details);
 
