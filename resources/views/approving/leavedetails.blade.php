@@ -1,24 +1,9 @@
-@extends ('layouts.layout')
+@extends ('approving.approvinglayout')
 
 
 @section('content')
 
-<div class="sidenav">
-  <a href="#" style="text-align: center;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbTzYAUrDCsawDGrujPE8i_3i6YQYOBySJCH0xr0rIyBEz2OVZgg" alt="user Image" height="200px" width="150/px" />
-  </a>
-  <a href="#">User Name</a>
-  <a href="#"><i class="fa fa-cog"></i>Profile Update</a>
-  <a href="#"><i class="fa fa-refresh"></i>Search Info</a>
-  
-  <a href="/logout"><i class="fa fa-sign-out"></i>Logout</a>
-  </div>
-
-<div class="sidenavright">
-
-  </div>
-  
-<div class="wrapper">
+<div class="container-fluid">
 <div class="post-list">
 <h2>{{ $user_details->name }}</h2>
 <h5><b>Employee ID</b> : {{ $user_details->emp_id }}</h5>

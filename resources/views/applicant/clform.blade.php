@@ -1,6 +1,6 @@
 @extends('layouts.layout')
-
 @section('content')
+<div class="container">
 <br><br>
 	<form action="/clform" method="POST">
 			{{ csrf_field() }}
@@ -26,4 +26,5 @@
 				<button type="submit" class="btn btn-primary">Submit</button>
 				
 		</form>
+</div>
 @endsection
