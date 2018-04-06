@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'emp_id', 'emp_type', 'sex', 'address', 'religion', 'caste', 'contact', 'salutation', 'category', 'physically_disabled', 'pnt_no', 'appointed_on_quota', 'discipline', 'achievements', 'hometown', 'pan_no', 'aadhaar', 'salary', 'marital_status', 'children', 'cl_balance', 'photo', 'dob','caste_pic','achievement_pic','aadhaar_pic','pan_pic','disability_pic'
+        'name', 'email', 'password', 'emp_id', 'emp_type', 'sex', 'address', 'religion', 'caste', 'contact', 'salutation', 'category', 'physically_disabled', 'pnt_no', 'appointed_on_quota', 'discipline', 'achievements', 'hometown', 'pan_no', 'aadhaar', 'salary', 'marital_status', 'children', 'cl_balance', 'photo', 'dob','caste_pic','achievement_pic','aadhaar_pic','pan_pic','disability_pic', 'joined_date',
     ];
 
     /**
@@ -75,6 +75,7 @@ class User extends Authenticatable
     //to insert info into users table.
 
     public static function insert_into_user($user,$p,$disability_pic,$achievement_pic,$pan_pic,  $aadhaar_pic,$caste_pic) {
+        $now = DB::raw('NOW()');
         $user = User::create([
             'emp_id'        => $user['emp_id'],
             'name'          => $user['name'],
@@ -82,6 +83,7 @@ class User extends Authenticatable
             'email'         => $user['email'],
             'password'      => bcrypt($user['password']),
             'dob'           => $user['dob'],
+            'joined_date'   => $now,
             'sex'        => $user['sex'],
             'address'       => $user['address'],
             'religion'      => $user['religion'],
