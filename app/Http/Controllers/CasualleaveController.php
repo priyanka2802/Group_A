@@ -17,6 +17,7 @@ class CasualleaveController extends Controller
 
 
     	$user_details = User::getUserDetails(auth()->id());
+        // dd($user_details);
 
         $all_leave_details = DB::select("
             SELECT * FROM casualleaves WHERE emp_id = ? ORDER BY end_date DESC
@@ -107,7 +108,7 @@ class CasualleaveController extends Controller
                     $admin_mail = DB::select("
                     SELECT name, email FROM users WHERE emp_type = 'Admin'
                 ");
-                // dd($user_mail[0]->name);
+                // dd($admin_mail[0]->name);
                     Mail::send(['text'=>'mail/mailleavesubmit'],$data,function($message) use ($admin_mail)
                 {
                         $message->to($admin_mail[0]->email,$admin_mail[0]->name)->subject('Leave Submitted');

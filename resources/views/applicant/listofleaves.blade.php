@@ -9,7 +9,7 @@
   </a>
   <a href="/clform"><i class="fa fa-user"></i>Casual Leave</a>
   <a href="/sclform"><i class="fa fa-user"></i>Special Casual Leave</a>
-  <a href="/ondutyform"><i class="fa fa-user"></i>On-duty Leave</a>
+  <a href="/odform"><i class="fa fa-user"></i>On-duty Leave</a>
   <a href="/hplform"><i class="fa fa-user"></i>Half-pay leave</a>
   <a href="/elform"><i class="fa fa-user"></i>Earned leave</a>
   <a href="/vacationform"><i class="fa fa-plane"></i>Vacation</a>
