@@ -31,8 +31,10 @@ CREATE TABLE `casualleaves` (
   `purpose` text,
   `contact_no` bigint(20) DEFAULT NULL,
   `status` text,
+  `approving` varchar(30) DEFAULT NULL,
+  `recommending` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +43,7 @@ CREATE TABLE `casualleaves` (
 
 LOCK TABLES `casualleaves` WRITE;
 /*!40000 ALTER TABLE `casualleaves` DISABLE KEYS */;
-INSERT INTO `casualleaves` VALUES (2,'8',7,'2018-03-13',NULL,'jj',9,'Approved'),(3,'8',8,'2018-03-08',NULL,'axaxu',8,'Rejected'),(4,'88',1,'2018-03-07',NULL,'dghdgh',11,'Reverted Back'),(6,'8',8,'2018-03-02',NULL,'hbhjbbbii',898799,'Approved'),(7,'8',8998,'2018-03-02',NULL,'uiui',98,'Approved'),(8,'8',898,'2018-03-02',NULL,'hbhhshxjskk',98,'Rejected'),(9,'9',8,'2018-03-09',NULL,'jhiuuiiu',899,'Approved'),(10,'8',4,'2018-04-25','2018-04-29','tfyt',5656,'Recommended'),(11,'8',4,'2018-04-25','2018-04-29','po',6776,'Recommended'),(12,'8',4,'2018-04-25','2018-04-28','qhedrfaytaugabb',67567,'Approved');
+INSERT INTO `casualleaves` VALUES (1,'23827',2,'2018-04-13',NULL,'g',7676,'Recommended','cse160001049@iiti.ac.in','cse160001049@iiti.ac.in'),(2,'23827',2,'2018-04-13',NULL,'g',7676,'Recommended','cse160001049@iiti.ac.in','cse160001049@iiti.ac.in'),(3,'23827',2,'2018-04-13',NULL,'g',7676,'Recommended','cse160001049@iiti.ac.in','cse160001049@iiti.ac.in'),(4,'23827',2,'2018-04-06',NULL,'ff',5,'Recommended','cse160001049@iiti.ac.in','cse160001049@iiti.ac.in'),(5,'23827',2,'2018-04-06',NULL,'ff',5,'Recommended','cse160001049@iiti.ac.in','cse160001049@iiti.ac.in'),(6,'23827',3,'2018-04-06','2018-04-08','vytvyt',5566,'Recommended','cse160001049@iiti.ac.in','cse160001049@iiti.ac.in'),(7,'11221',3,'2018-04-06','2018-04-08','gg',6767,'Application submitted','cse160001049@iiti.ac.in','cse160001048@iiti.ac.in'),(8,'11221',4,'2018-04-14','2018-04-17','yty',566,'Application submitted','cse160001049@iiti.ac.in','cse160001048@iiti.ac.in');
 /*!40000 ALTER TABLE `casualleaves` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +68,7 @@ CREATE TABLE `holidays` (
 
 LOCK TABLES `holidays` WRITE;
 /*!40000 ALTER TABLE `holidays` DISABLE KEYS */;
-INSERT INTO `holidays` VALUES (1,'2018-04-27','xgsav'),(2,'2018-04-28','xaxahb');
+INSERT INTO `holidays` VALUES (1,'2018-04-18','asas'),(2,'2018-04-05','dadsad');
 /*!40000 ALTER TABLE `holidays` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +95,7 @@ CREATE TABLE `leavebalances` (
   `td` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `emp_id` (`emp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +104,7 @@ CREATE TABLE `leavebalances` (
 
 LOCK TABLES `leavebalances` WRITE;
 /*!40000 ALTER TABLE `leavebalances` DISABLE KEYS */;
-INSERT INTO `leavebalances` VALUES (1,'8',879,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-04-04 11:34:03');
+INSERT INTO `leavebalances` VALUES (1,'23827',100,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-04-04 13:42:27'),(2,'11221',199,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-04-04 13:51:34'),(3,'1254',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-04-05 13:07:19');
 /*!40000 ALTER TABLE `leavebalances` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -118,7 +120,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +129,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (13,'2018_03_12_185601_casualleave',1),(46,'2018_03_13_063818_create_casual_leaves_table',2),(51,'2014_10_12_000000_create_users_table',3),(52,'2014_10_12_100000_create_password_resets_table',3),(53,'2018_03_14_172205_create_casualleaves_table',3);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2018_03_14_172205_create_casualleaves_table',1),(4,'2018_03_15_170317_create_recommends_table',1),(5,'2018_04_03_123027_create_leavebalances_table',1),(6,'2018_04_04_112748_create_holidays_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,6 +200,7 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `dob` date NOT NULL,
+  `joined_date` date NOT NULL,
   `sex` enum('M','F') COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `religion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -218,13 +221,18 @@ CREATE TABLE `users` (
   `children` int(11) NOT NULL,
   `cl_balance` int(11) NOT NULL,
   `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `achievement_pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `caste_pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `aadhaar_pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pan_pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `disability_pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_emp_id_unique` (`emp_id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -233,7 +241,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'8','u','recommending','a@b.com','$2y$10$c4P5nctgOmQhuZT1J.jV3e1moYgQMUwzh9N214I39fji/4qQRre7u','0011-11-11','M','l','l','l',99,'l','l','N',9,'l','l','l','l','9',888888888888,9,'l',9,9,'9','oELHBBBUXt5UevwBypmcyH4Sus8ZzwtuSpdNom1XbfdrqnG7dCjJh7asJ3TU','2018-03-14 11:55:12','2018-03-14 11:55:12'),(2,'88','uuuu','general','priyankarotte@gmail.com','$2y$10$bx2GeEOLlab.6hxIm7ittuWf/gOaMprBwyBgfI1/HAYwMY1O8HEu.','0077-07-07','M','jj','j','j',8,'8','8','N',8,'8','8','8','9','8',777777777777,8,'8',8,88,'8','0wEOgk9KrnKIDkXVfmJr5D2ZNkPNCfof5hIwie68dq5Un5NX4AiFY4zg9eGV','2018-03-14 13:22:39','2018-03-14 13:22:39'),(3,'9','9','approval','cse160001057@iiti.ac.in','$2y$10$Js.Qor8vGoB0CTrkEiBNneyMlqIe5qSPXqpZ4bIhEj4xzask9l1ru','0088-08-08','M','8','8','8',8,'8','88','N',8,'8','8','8','8','8',888888888888,8,'8',8,8,'8','n9YB3UvC5YJpqHBNoq7Z9zyCfuPxTdzvYL3o91pwqDISJQGZfJSV5AZXc1tw','2018-03-15 08:16:29','2018-03-15 08:16:29');
+INSERT INTO `users` VALUES (1,'11221','hvvhjv','general','cse160001057@iiti.ac.in','$2y$10$qVbnXKiGOBohw3yd3.xcfudEaVT.WkpqYx0nUahOIj22z6e..7SXG','2017-04-23','0000-00-00','M','bxjj','bhbhj','hbhj',12345678890,'bhbh','hbhh','N',12,'hbh','cs','hbhbh','777','54665',111111111113,1777,'7',777,80,'1522848703.jpeg','15228487031522698369MST using Union Find data structure.pdf','15228487031522760824download.png','15228487031522698369.png','15228487031522760064.png','15228487031522760064download.png','1XCDdckaYHeMdPSGtYcPKC2AaOCUdo6ERnnr4mnuNAIq0K8i9xHRPXcVqqBq','2018-04-04 08:01:43','2018-04-04 08:01:43'),(2,'23827','hshq','recommending','cse160001048@iiti.ac.in','$2y$10$Y/MeeF2L0MEDnhfyLbWLH.oNgEAVfnVp4tCg03gYpSif/WewmJkm6','2017-04-03','0000-00-00','M','888','8','8',888888,'88','8','N',8,'8','hh','8','8','8',266666666664,8,'8',8,100,'1522849293.png','15228492931522698369MST using Union Find data structure.pdf','15228492931522855340.png','15228492931522760824download.png','15228492931522433787.jpeg','15228492931522855054download.png','yKlWUSZ7WwqAw4QfgQkR5WeandLZ7qq8m9wIroi8xhJydvuVWO9qTXbpKgJP','2018-04-04 08:11:33','2018-04-04 08:11:33'),(4,'238','hshq','approval','cse160001049@iiti.ac.in','$2y$10$A/A9U653cRIwvjxvE85k1un8qafqm5bJT3C5sPeKP8kNzUGe5jucm','2017-04-03','0000-00-00','F','888','8','8',888,'88','8','N',8,'8','hh','8','8','8',266666366662,8,'8',8,100,'1522849347.png','15228493471522698369MST using Union Find data structure.pdf','15228493471522855340.png','15228493471522760824download.png','15228493471522433787.jpeg','15228493471522855054download.png','BSS0SV0RuN7d0YXvyvoi00lmAUACrFoQrcFbudddTWxCFnO0mIQvkh1RrSyW','2018-04-04 08:12:27','2018-04-04 08:12:27'),(5,'9832','jnjkankj','admin','cse160001017@iiti.ac.in','$2y$10$3.mMV80EIQGMqRVVU.s7ZebjqfV2/GHaiRQZTrOP6CIc/WW2HJmku','2017-03-04','0000-00-00','M','7','7','7',77,'7','7','N',7,'7','h','7','7','7',999999999999,7,'7',7,199,'1522849894.png','15228498941522698369MST using Union Find data structure.pdf','15228498941522857541.png','15228498941522849347.png','15228498941522855340download.png','15228498941522855054download.png','eIXybhRxmfK9nQCkPE5mN8rXhtbHGoSUus6jAs3xY5O8u4zrv8z9PWWR3ziO','2018-04-04 08:21:34','2018-04-04 08:21:34'),(6,'1254','hbhbj','general','cse160001051@iiti.ac.in','$2y$10$ALHL3QfAPsSuGDi8q1UT9.WLvop/XEYk4KolehKQ7/GjHojxMVwYO','2017-03-04','2018-04-05','M','u','u','uu',6,'6','7','N',6,'7','hu','7','7','6',555555555558,7,'7',7,20,'1522933639.png','15229336391522698369MST using Union Find data structure.pdf','15229336391522857541.png','15229336391522433787.jpeg','15229336391522855340.png','15229336391522849249.png',NULL,'2018-04-05 07:37:19','2018-04-05 07:37:19');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -246,4 +254,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-04 17:32:51
+-- Dump completed on 2018-04-05 18:38:01

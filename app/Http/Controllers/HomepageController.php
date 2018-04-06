@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Casualleave;
 use App\User;
 use Illuminate\Support\Facades\DB;
+// use App\Events\updateSalary;
+use Event;
 
 class HomepageController extends Controller
 {
@@ -68,7 +70,12 @@ class HomepageController extends Controller
             SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE users.emp_id=?
         order by casualleaves.start_date desc", array($emp_id[0]->emp_id));
         // dd($user_details);
+        
+        //firing an event
+      // Event::fire(new updateSalary($emp_id));
+
         return view('applicant.leave_history', compact('user_details'));
+
 
     }
 }
