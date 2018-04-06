@@ -124,7 +124,7 @@
                         
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="dob" class=" form-control-label">Date Of Birth</label></div>
-                            <div class="col-12 col-md-9"><input placeholder="yyyy/mm/dd" type="text" name="dob" class="form-control">
+                            <div class="col-12 col-md-9"><input placeholder="yyyy/mm/dd" type="date" name="dob" class="form-control">
                             </div>
                           </div>
                         
