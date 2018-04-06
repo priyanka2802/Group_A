@@ -7,6 +7,7 @@
 <div class="post-list">
 <hr>
 @foreach($user_details as $user_details)
+<div class="hey">
     <section class="post-item">
         <header class="post-item-header">
            <p class="post-item-meta">
@@ -25,6 +26,7 @@
         <a class="post-item-more" href="/approval/{{$user_details->ID}}">Read Full Details</a>
       </footer>
     </section>
+</div>
 <hr>
 @endforeach
     </div>

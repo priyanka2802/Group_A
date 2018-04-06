@@ -32,9 +32,8 @@ Route::get('/clform', 'CasualleaveController@show');
 
 Route::post('/delete', 'AdminController@delete_user');
 
-<<<<<<< HEAD
 Route::get('/odform', 'OnDutyController@show');
-=======
+
 Route::get('/listofleaves', 'CasualleaveController@showlist');
 
 Route::post('/sclform', 'sclController@store');
@@ -44,7 +43,6 @@ Route::post('/studyform', 'studyController@store');
 Route::get('/sclform', 'sclController@show');
 
 Route::get('/studyform', 'studyController@show');
->>>>>>> 1448a3e1fb083403198296186aa70cdb5fe0306f
 
 Route::get('/leave_history', 'HomepageController@show_leaves_history');
 
