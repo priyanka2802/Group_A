@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Admin</title>
+    <title>Approval</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -63,8 +63,6 @@
 </style>  
 </head>
 <body>
-
-
         <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -81,7 +79,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href=""{{ url('/admin') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{ url('/approval') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">Elements</h3><!-- /.menu-title -->
                     <li class="menu-item">
@@ -145,10 +143,6 @@
                     <li class="menu-item">
                         <a href="{{ url('/logout') }}" > <i class="menu-icon fa fa-table"></i>Logout</a>
                     </li>
-                    
-                   
-                    
-                    
                     
                 </ul>
             </div><!-- /.navbar-collapse -->

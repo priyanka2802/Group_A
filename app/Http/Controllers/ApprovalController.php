@@ -44,7 +44,7 @@ class ApprovalController extends Controller
 			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE casualleaves.ID=?
     	", array($id));
         // dd($id);
-    //	$user_details = $user_details[0];
+    	$user_details = $user_details[0];
     	return view('approving.leavedetails', compact('user_details'));
     }
 

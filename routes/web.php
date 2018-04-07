@@ -26,7 +26,7 @@ Route::get('/c', function() {
 Route::post('/u', 'RegistrationController@updateUsers');
 
 
-Route::get('/search', 'HomepageController@showall')->name('homeAdmin');
+Route::get('/search', 'HomepageController@showall');
 
 Route::get('/clform', 'CasualleaveController@show');
 
