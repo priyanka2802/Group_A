@@ -53,12 +53,22 @@
                         <a href="register" > <i class="menu-icon fa fa-user"></i>Profile Update</a>
                         
                     </li>
-                    <li class="menu-item">
-
-                        <a href="/listofleaves" > <i class="menu-icon fa fa-table"></i>Apply Leave</a>
-                        
-
+                     <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Apply Leave</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="/sclform">Special Casual Leave</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="/odform">On-Duty Leave</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="/hplform">Half-Pay Leave</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="/elform">Earned Leave</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="/vactionform">Vacation</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="/eolform">Extra Ordinary </a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="/studyleave">Study Leave</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="/maternityform">Maternity Leave</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="/paternityform">Paternity Leave</a></li>
+                       
+                        </ul>
                     </li>
+
                     <li class="menu-item">
                         <a href="#"  data-toggle="modal" data-target="#myModal" > <i class="menu-icon fa fa-pencil"></i>Check Leave Balance</a>
 <!-- Modal -->

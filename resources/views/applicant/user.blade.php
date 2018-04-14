@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            
+
          <div class="content mt-4">
             <div class="animated fadeIn">
 
@@ -24,7 +24,7 @@
 			<table class="table">
     <tbody>
       <tr>
-        <td><img height="200" width="300" src="/images/{{ $user_details->photo }}"</td>
+        <td><img height="200" width="300" src="{{ asset("images/$user_details->photo ") }}"</td>
         <td >
         <span style="font-weight: bold  ">{{ $user_details->name }}</span></td>
       </tr>
@@ -36,7 +36,7 @@
         <td style="font-weight: bold;">Employee Type</td>
         <td>{{ $user_details->emp_type }}</td>
       </tr>
-      
+
       <tr>
         <td style="font-weight: bold;">Date of Birth</td>
         <td>{{ $user_details->dob }}</td>
@@ -117,7 +117,7 @@
   </table>
 
                           </div>
-		
+
 
             </div>
     </div>

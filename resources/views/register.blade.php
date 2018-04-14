@@ -45,7 +45,7 @@
                         <strong>Basic Form</strong> Elements
                       </div>
                       <div class="card-body card-block">
-                        <form action="/register" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="/register" method="post" enctype="multipart/form-data" class="form-horizontal" data-toggle="validator">
                         	{{ csrf_field() }}
       							@include ('errors.errors')
                                
@@ -55,6 +55,19 @@
                             <div class="col-12 col-md-9"><input type="text" placeholder="Employee Id" id="emp_id" name="emp_id" p class="form-control">
                             </div>
                           </div>
+                                <div class="row form-group">
+                            <div class="col col-md-3"><label for="salutation" class=" form-control-label">Salutation</label></div>
+                           <div class="col-12 col-md-9">
+                              <select name="salutation" id="salutation" class="form-control">
+                                <option value="">Please Select</option>
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Miss">Miss</option>
+                                
+                                 </select>
+                            </div>
+                                                    </div>
+                      
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="name" class=" form-control-label">Name</label></div>
                             <div class="col-12 col-md-9"><input placeholder="Full Name" type="text" name="name" class="form-control">
@@ -134,6 +147,7 @@
                             </div>
                           </div>
                           
+                          
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="address" class=" form-control-label">Address</label></div>
                             <div class="col-12 col-md-9"><input placeholder="Address" type="text" name="address" class="form-control">
@@ -166,12 +180,7 @@
                             <div class="col-12 col-md-9"><input placeholder="Pan" type="text" name="pan_no" class="form-control">
                             </div>
                           </div>
-                        
-                          <div class="row form-group">
-                            <div class="col col-md-3"><label for="salutation" class=" form-control-label">Salutation</label></div>
-                            <div class="col-12 col-md-9"><input placeholder="Salutation" type="text" name="salutation" class="form-control">
-                            </div>
-                          </div>
+                          
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="category" class=" form-control-label">Category</label></div>
                             <div class="col-12 col-md-9"><input placeholder="Category" type="text" name="category" class="form-control">
