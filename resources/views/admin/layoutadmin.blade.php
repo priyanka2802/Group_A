@@ -24,11 +24,11 @@
     <link href="{{ URL::asset('assets/css/lib/vector-map/jqvmap.min.css') }}" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-    
+
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 <style>
     @yield('style')
-</style>  
+</style>
 </head>
 <body>
 
@@ -54,26 +54,26 @@
                     <h3 class="menu-title">Elements</h3><!-- /.menu-title -->
                     <li class="menu-item">
                         <a href="{{ url('/register') }}" > <i class="menu-icon fa fa-user"></i>Create User</a>
-                        
+
                     </li>
                     <li class="menu-item">
                         <a href="#"  data-toggle="modal" data-target="#myModal" > <i class="menu-icon fa fa-pencil"></i>Delete User</a>
                        <div class="modal fade" id="myModal" role="dialog">
                             <div class="modal-dialog">
-    
+
       <!-- Modal content-->
 <div class="container">
                         <div class="modal-content" style="position:center">
                             <div class="modal-header">
                                 <h4 class="modal-title">Delete User</h4>
-                            
+
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
                                 <form action="/delete" method="post" enctype="multipart/form-data" class="form-horizontal">
                             {{ csrf_field() }}
                                 @include ('errors.errors')
-      
+
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="emp_id" class=" form-control-label">Employee Id</label></div>
                             <div class="col-12 col-md-9"><input type="text" placeholder="Employee Id" id="emp_id" name="emp_id" p class="form-control">
@@ -90,10 +90,10 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                             </div>
-      
+
                             </div>
-  
-                    </div>     
+
+                    </div>
                     </li>
                     <li class="menu-item">
                         <a href="#" > <i class="menu-icon fa fa-pencil"></i>Manage Holidays</a>
@@ -113,11 +113,11 @@
                     <li class="menu-item">
                         <a href="{{ url('/logout') }}" > <i class="menu-icon fa fa-table"></i>Logout</a>
                     </li>
-                    
-                   
-                    
-                    
-                    
+
+
+
+
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -137,14 +137,6 @@
                 <div class="col-sm-7">
                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
                     <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
-                        </div>
-
                         <div class="dropdown for-notification">
                           <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-bell"></i>
@@ -254,7 +246,7 @@
             </div>
 
         </header><!-- /header -->
-   
+
 
     @yield('content')
 

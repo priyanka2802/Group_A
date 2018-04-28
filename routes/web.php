@@ -17,10 +17,7 @@
 Route::get('/calendar', function() {
     return view('calendar');
 });
-
-Route::get('/c', function() {
-    return view('admin.applicantedit');
-});
+Route::get('/user_profile/{user_details}', 'HomepageController@user_profile');
 
 
 Route::post('/u', 'RegistrationController@updateUsers');
@@ -94,4 +91,3 @@ Route::get('/update/{user_details}', 'HomepageController@showuserdetails');
 
 
 Route::get('/rejected/{user_details}', 'ApprovalController@updatestatus2');
-
