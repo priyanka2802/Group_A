@@ -65,7 +65,7 @@ class HomepageController extends Controller
             SELECT * FROM users WHERE emp_id=?
         ", array($id));
         $user_details = $user_details[0];
-         return view('applicant.applicantedit', compact('user_details'));
+         return view('applicant.edit', compact('user_details'));
     }
 
 

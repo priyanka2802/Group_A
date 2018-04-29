@@ -1,4 +1,4 @@
-@extends('admin.layoutadmin')
+@extends('applicant.applicantlayout')
 
 @section('content')
   <div class="breadcrumbs">
@@ -156,42 +156,42 @@
                      <tr>
                         <td>Aadhaar Image
                           </td>
-                          @if ($user_details->aadhaar_pic == '')
-                          <td>Not Available
-                          </td>
+                          @if ($user_details->aadhaar_pic == 'NULL')
+                          <td>Not Available<input type="file" name="aadhaar_pic" class="form-control"></td>
                           @else
                           <td><a  href="{{ asset("images/$user_details->aadhaar_pic ") }}">Download</a>
+                              <input type="file" name="aadhaar_pic" class="form-control" >
                           </td>
                           @endif
                           </tr>
                     <tr>
                         <td>Pan Image</td>
-                        @if ($user_details->pan_pic == '' )
-                        <td>Not Available
-                        </td>
+                        @if ($user_details->pan_pic == 'NULL' )
+                        <td>Not Available<input type="file" name="pan_pic" class="form-control"></td>
                         @else
-                        <td><a href="{{ asset("images/$user_details->pan_pic ") }}">Download</a></td>
+                        <td><a href="{{ asset("images/$user_details->pan_pic ") }}">Download</a>
+                        <input type="file" name="pan_pic" class="form-control"></td>
                         @endif
 
 
                     </tr>
                     <tr>
                         <td>Caste Certificate</td>
-                        @if ($user_details->caste_pic == '' )
-                        <td>Not Available
-                        </td>
+                        @if ($user_details->caste_pic == 'NULL' )
+                        <td>Not Available<input type="file" name="caste_pic" class="form-control"></td>
                         @else
-                        <td><a href="{{ asset("images/$user_details->caste_pic ") }}" alt="Not Applicale">Download</a></td>
+                        <td><a href="{{ asset("images/$user_details->caste_pic ") }}" alt="Not Applicale">Download</a>
+                        <input type="file" name="caste_pic" class="form-control"></td>
                         @endif
 
                     </tr>
                     <tr>
                         <td> Achievements</td>
-                        @if ($user_details->achievement_pic == '' )
-                        <td>Not Available
-                        </td>
+                        @if ($user_details->achievement_pic == 'NULL' )
+                        <td>Not Available<input type="file" name="achievement_pic" class="form-control"></td>
                         @else
-                        <td><a href="{{ asset("images/$user_details->achievement_pic") }}" alt="Not Applicale">Download</download</a></td>
+                        <td><a href="{{ asset("images/$user_details->achievement_pic") }}" alt="Not Applicale">Download</download</a>
+                        <input type="file" name="achievement_pic" class="form-control"></td>
                   @endif
 
                         </tr>
@@ -200,12 +200,13 @@
 
                               <td>Disablitiy Image</td>
 
-                      @if ($user_details->achievement_pic == '' )
-                      <td>Not Available
-                      </td>
+                      @if ($user_details->disability_pic == 'NULL' )
+                      <td>Not Available<input type="file" name="disability_pic" class="form-control"></td>
+
                       @else
-                      <td><a href="{{ asset("images/$user_details->disability_pic") }}" alt="Not Applicable">Download</a></td>
-                      
+                      <td><a href="{{ asset("images/$user_details->disability_pic") }}" alt="Not Applicable">Download</a>
+                      <input type="file" name="disability_pic" class="form-control"></td>
+
                 @endif
                   </tr>
 

@@ -138,7 +138,7 @@ class CasualleaveController extends Controller
                  $admin_mail = DB::select("
                     SELECT name, email FROM users WHERE emp_type = 'Admin'
                 ");
-            //    auth()->user()->notify(new addNot());
+               auth()->user()->notify(new addNot());
                  // dd($admin_mail);
             // dd($user_mail[0]->name);
 

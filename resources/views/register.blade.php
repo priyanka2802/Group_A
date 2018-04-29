@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            
+
          <div class="content mt-4">
             <div class="animated fadeIn">
 
@@ -48,8 +48,8 @@
                         <form action="/register" method="post" enctype="multipart/form-data" class="form-horizontal" data-toggle="validator">
                         	{{ csrf_field() }}
       							@include ('errors.errors')
-                               
-                        
+
+
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="emp_id" class=" form-control-label">Employee Id</label></div>
                             <div class="col-12 col-md-9"><input type="text" placeholder="Employee Id" id="emp_id" name="emp_id" p class="form-control">
@@ -63,11 +63,11 @@
                                 <option value="Mr">Mr</option>
                                 <option value="Mrs">Mrs</option>
                                 <option value="Miss">Miss</option>
-                                
+
                                  </select>
                             </div>
                                                     </div>
-                      
+
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="name" class=" form-control-label">Name</label></div>
                             <div class="col-12 col-md-9"><input placeholder="Full Name" type="text" name="name" class="form-control">
@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="radio">
                                   <label for="Approving" class="form-check-label ">
-                                    <input type="radio" id="approval" name="emp_type" value="approval" class="form-check-input">Approving Authority
+                                    <input type="radio" id="approval" name="emp_type" value="approving" class="form-check-input">Approving Authority
                                   </label>
                                 </div>
                                 <div class="radio">
@@ -134,26 +134,26 @@
                             <div class="col-12 col-md-9"><input placeholder="Aadhaar" type="number" name="aadhaar" class="form-control">
                             </div>
                           </div>
-                        
+
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="dob" class=" form-control-label">Date Of Birth</label></div>
                             <div class="col-12 col-md-9"><input placeholder="yyyy/mm/dd" type="date" name="dob" class="form-control">
                             </div>
                           </div>
-                        
+
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="discipline" class=" form-control-label">Discipline</label></div>
                             <div class="col-12 col-md-9"><input placeholder="Discipline" type="text" name="discipline" class="form-control">
                             </div>
                           </div>
-                          
-                          
+
+
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="address" class=" form-control-label">Address</label></div>
                             <div class="col-12 col-md-9"><input placeholder="Address" type="text" name="address" class="form-control">
                             </div>
                           </div>
-                        
+
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="religion" class=" form-control-label">Religion</label></div>
                             <div class="col-12 col-md-9"><input placeholder="Religion" type="text" name="religion" class="form-control">
@@ -164,7 +164,7 @@
                             <div class="col-12 col-md-9"><input placeholder="Caste" type="text" name="caste" class="form-control">
                             </div>
                           </div>
-                        
+
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="contact" class=" form-control-label">Contact</label></div>
                             <div class="col-12 col-md-9"><input placeholder="Contact" type="number" name="contact" class="form-control">
@@ -180,7 +180,7 @@
                             <div class="col-12 col-md-9"><input placeholder="Pan" type="text" name="pan_no" class="form-control">
                             </div>
                           </div>
-                          
+
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="category" class=" form-control-label">Category</label></div>
                             <div class="col-12 col-md-9"><input placeholder="Category" type="text" name="category" class="form-control">
@@ -201,7 +201,7 @@
                             <div class="col-12 col-md-9"><input placeholder="Achievements" type="text" name="achievements" class="form-control">
                             </div>
                           </div>
-                         
+
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="hometown" class=" form-control-label">Hometown</label></div>
                             <div class="col-12 col-md-9"><input placeholder="Hometown" type="text" name="hometown" class="form-control">
@@ -239,17 +239,17 @@
                             <div class="col-12 col-md-9"><input placeholder="CL Balance" type="number" name="cl_balance" class="form-control">
                             </div>
                           </div>
-                 
+
                      <div class="row form-group">
                             <div class="col col-md-3"><label for="photo" class=" form-control-label">Upload User Image</label></div>
                             <div class="col-12 col-md-9"><input type="file" id="photo" name="photo" class="form-control-file"></div>
                           </div>
-                           
+
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="aadhaar_pic" class=" form-control-label">Upload Aadhaar Image</label></div>
                             <div class="col-12 col-md-9"><input type="file"  id="aadhaar_pic" name="aadhaar_pic" class="form-control-file"></div>
                           </div>
-          					
+
 
   <div class="row form-group">
                             <div class="col col-md-3"><label for="disability_pic" class=" form-control-label">Upload Disability Certificate</label></div>
@@ -259,18 +259,18 @@
                             <div class="col col-md-3"><label for="pan_pic" class=" form-control-label">Upload Pan Number</label></div>
                             <div class="col-12 col-md-9"><input type="file"  id="pan_pic" name="pan_pic" class="form-control-file"></div>
                           </div>
-  
+
                         <div class="row form-group">
                             <div class="col col-md-3"><label for="caste_pic" class=" form-control-label">Upload Caste Certificate</label></div>
                             <div class="col-12 col-md-9"><input type="file"  id="caste_pic" name="caste_pic" class="form-control-file"></div>
                           </div>
-  
+
   						 <div class="row form-group">
                             <div class="col col-md-3"><label for="achievement_pic" class=" form-control-label">Upload Achievement <small>in pdf only</small></label></div>
                             <div class="col-12 col-md-9"><input type="file" id="achievement_pic" name="achievement_pic" class="form-control-file"></div>
                           </div>
-  
- 							                              
+
+
                           <div>
                           <button id="submit" type="submit" class="btn btn-lg btn-info btn-block">
                                               <i class="fa fa-lock fa-sm"></i>&nbsp;
@@ -298,4 +298,3 @@
     })
 </script>
 @endsection
-
