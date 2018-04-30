@@ -35,19 +35,16 @@
                   <thead class="thead-dark">
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Holiday</th>
                       <th scope="col">Date</th>
-                      <th scope="col">Day</th>
-                    </tr>
+                      <th scope="col">Description</th>
+                      </tr>
                   </thead>
                   <tbody>
                   @foreach($holiday as $list)
                     <tr>
-                      <th scope="row">{{$holiday->id}}</th>
-                      <td>{{$holiday->holiday}}</td>
-                      <td>{{$holiday->date}}</td>
-                      <td>{{$holiday->day}}</td>
-                      <td class="button"><i class="fa fa-close"></td>
+                      <th scope="row">{{$list->ID}}</th>
+                      <td>{{$list->Date}}</td>
+                      <td>{{$list->Description}}</td>
                     </tr>
                     @endforeach
                   </tbody>
