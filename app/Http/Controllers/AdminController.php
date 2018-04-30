@@ -54,5 +54,11 @@ class AdminController extends Controller
         
     }
 
+    public function displayHolidays() {
+            
+                return view('/Addholidays');
+        
+    }
+
 
 }

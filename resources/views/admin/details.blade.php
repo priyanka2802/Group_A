@@ -3,8 +3,10 @@
 
 @section('content')
 
-<div class="container-fluid">
-<div class="post-list">
+
+
+<div class="container-fluid" style="margin:30px 5px" >
+<div class="post-list" style="margin-left:50px">
 <h2>{{ $user_details->name }}</h2>
 <h5><b>Employee ID</b> : {{ $user_details->emp_id }}</h5>
 <br>
@@ -14,4 +16,6 @@
 <p><h5><b>Number of Days of Leave: </b></h5> {{ $user_details->no_of_days }}</p>
 <p><h5><b>Contact (During Leave): </b></h5> {{ $user_details->contact }} </p>
 <br>
+</div>
+</div>
 @endsection

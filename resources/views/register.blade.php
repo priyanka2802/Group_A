@@ -223,12 +223,12 @@
                               <div class="form-check">
                                 <div class="radio">
                                   <label for="yes" class="form-check-label ">
-                                    <input type="radio" id="physically_disabled" name="physically_disabled" value="Y" class="form-check-input">Yes
+                                    <input type="radio" id="physically_disabled" name="physically_disabled" value="Yes" class="form-check-input">Yes
                                   </label>
                                 </div>
                                 <div class="radio">
                                   <label for="No" class="form-check-label ">
-                                    <input type="radio" id="physically_disabled" name="physically_disabled" value="N " class="form-check-input">No
+                                    <input type="radio" id="physically_disabled" name="physically_disabled" value="No" class="form-check-input">No
                                   </label>
                                 </div>
                           </div>

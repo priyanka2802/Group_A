@@ -29,23 +29,17 @@
                   <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Profile</strong>
+                            <strong class="card-title">Add holidays</strong>
                         </div>
                         <div class="card-body">
                           <!-- Credit Card -->
                           <div id="pay-invoice">
                               <div class="card-body">
-                                  <div class="card-title">
-                                      <h3 class="text-center"><i class="fa fa-user">&nbsp</i>User</h3>
-                                  </div>
                                   <hr>
                                   <div class="col-lg-12">
                     <div class="card">
-                      <div class="card-header">
-                        <strong>Basic Form</strong> Elements
-                      </div>
                       <div class="card-body card-block">
-                        <form action="/register" method="post" enctype="multipart/form-data" class="form-horizontal" data-toggle="validator">
+                        <form action="/Addholidays" method="post" enctype="multipart/form-data" class="form-horizontal" data-toggle="validator">
                         	{{ csrf_field() }}
       							@include ('errors.errors')
 
@@ -55,18 +49,19 @@
                             </div>
                           </div>
                       
-                          </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="Description" class=" form-control-label">Description </label></div>
                             <div class="col-12 col-md-9"><input placeholder="Description" type="text" name="Description" class="form-control">
                             </div>
+                            </div>
                           
                           <button id="submit" type="submit" class="btn btn-lg btn-info btn-block">
-                                              <i class="fa fa-lock fa-sm"></i>&nbsp;
+                                              <i class="fa fa-lock fa-sm"></i>
                                               <span id="submit">Add Holiday</span>
                                          </button>
-                                      </div>
+                                    
                         </form>
+                        </div>
                     </div>
                 </div>
 
