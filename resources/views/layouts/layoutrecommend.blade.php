@@ -27,7 +27,7 @@
     <link href="{{ URL::asset('assets/css/lib/vector-map/jqvmap.min.css') }}" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-    
+
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 <style>
 
@@ -37,7 +37,7 @@
     -webkit-box-shadow: 3px 3px 3px #777;
     -moz-box-shadow: 3px 3px 3px #777;
     box-shadow: 3px 3px 3px #777;
-    
+
      -webkit-transition: margin 0.2s ease-out;
     -moz-transition: margin 0.2s ease-out;
     -o-transition: margin 0.2s ease-out;
@@ -57,19 +57,14 @@
 }
 
 .hey:hover{
-    margin-top: -10px;    
+    margin-top: -10px;
 }
     @yield('style')
-</style>  
+</style>
 </head>
 <body>
-
-
-        <!-- Left Panel -->
-
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-
+<aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
@@ -84,63 +79,16 @@
                         <a href="{{ url('/recommend') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">Elements</h3><!-- /.menu-title -->
-                    
-                    <!-- <li class="menu-item">
-                        <a href="#"  data-toggle="modal" data-target="#myModal" > <i class="menu-icon fa fa-pencil"></i>Delete User</a>
-                       <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog"> -->
-    
-      <!-- Modal content-->
-<!-- <div class="container">
-                        <div class="modal-content" style="position:center">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Delete User</h4>
-                            
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="/delete" method="post" enctype="multipart/form-data" class="form-horizontal">
-                            {{ csrf_field() }}
-                                @include ('errors.errors')
-      
-                          <div class="row form-group">
-                            <div class="col col-md-3"><label for="emp_id" class=" form-control-label">Employee Id</label></div>
-                            <div class="col-12 col-md-9"><input type="text" placeholder="Employee Id" id="emp_id" name="emp_id" p class="form-control">
-                            </div>
-                          </div>
-                          <div>
-                          <button id="submit" type="submit" class="btn btn-lg btn-info btn-block">
-                                              <span id="submit">Delete</span>
-                                         </button>
-                                      </div>
-                        </form>
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                            </div>
-      
-                            </div>
-  
-                    </div>  -->    
-                    </li>
-                    <!-- <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-pencil"></i>Manage Holidays</a>
-                    </li> -->
-                    <!-- <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-table"></i>Manage Leaves</a>
-                    </li> -->
-                    <!-- <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-table"></i>Check Status Of Leaves</a>
-                    </li> -->
+
+
                     <li class="menu-item">
                         <a href="#" > <i class="menu-icon fa fa-user"></i>Profile Update</a>
-                        
+
                     </li>
                     <li class="menu-item">
 
                         <a href="/listofleaves" > <i class="menu-icon fa fa-table"></i>Apply Leave</a>
-                        
+
 
                     </li>
                     <li class="menu-item">
@@ -148,7 +96,7 @@
 <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog"  >
     <div class="modal-dialog" style="position:center;">
-    
+
       <!-- Modal content-->
       <div class="mod al-content"  style="position:center;background-color:white;">
         <div class="modal-header">
@@ -158,8 +106,7 @@
         <div class="modal-body">
 
           <ul>
-          <div class="container-fluid">
-        
+      <div class="container-fluid">
           <li>Casual leaves: {{ $user_details->cl_balance }}</li>
           <li>Special casual leaves: {{ $user_details->cl_balance }}</li>
           <li>On duty leaves: {{ $user_details->cl_balance }}</li>
@@ -170,22 +117,15 @@
           <li>Study leaves: {{ $user_details->cl_balance }}</li>
           <li>Extraordinary leaves: {{ $user_details->cl_balance }}</li>
           <li>Vacation leaves: {{ $user_details->cl_balance }}</li>
-
           </div>
-          
-          
           </ul>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
     </div>
   </div>
-  
-
-
                     </li>
                     <!-- <li class="menu-item">
                         <a href="{{ url('/calendar') }}" > <i class="menu-icon fa fa-table"></i>Calendar</a>
@@ -199,11 +139,11 @@
                     <li class="menu-item">
                         <a href="{{ url('/logout') }}" > <i class="menu-icon fa fa-table"></i>Logout</a>
                     </li>
-                    
-                   
-                    
-                    
-                    
+
+
+
+
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -348,7 +288,7 @@
                     </div>
                 </div>
             </div>
-            
+
          <div class="content mt-4">
             <div class="animated fadeIn">
 
@@ -360,15 +300,13 @@
         <li><a href="/leavepending" style="font-weight: bold">Pending</a></li>
         <li><a href="/leaverecommended" style="font-weight: bold">Recommended</a></li>
         <li><a href="/leavereverted" style="font-weight: bold">Reverted Back</a></li>
-    
+
     </ul>
- 
 
 
-                    <div class="card">
- 
 
-    @yield('content')
+    <div class="card">
+      @yield('content')
     </div>
 </div>
  </div>

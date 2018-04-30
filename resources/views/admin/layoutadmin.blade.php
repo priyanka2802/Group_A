@@ -96,7 +96,7 @@
                     </div>
                     </li>
                     <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-pencil"></i>Manage Holidays</a>
+                        <a href="/holidaylist" > <i class="menu-icon fa fa-pencil"></i>Manage Holidays</a>
                     </li>
                     <li class="menu-item">
                         <a href="#" > <i class="menu-icon fa fa-table"></i>Manage Leaves</a>
