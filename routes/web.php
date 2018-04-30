@@ -21,6 +21,9 @@ Route::get('/user_profile/{user_details}', 'HomepageController@user_profile');
 
 Route::get('/holidaylist', 'HolidayController@display'); 
 
+Route::get('/holidaylist1', 'HolidayController@display1'); 
+
+
 
 Route::get('/Displayholidays', 'AdminController@displayHolidays');
 
@@ -55,8 +58,6 @@ Route::get('/leave_history', 'HomepageController@show_leaves_history');
 Route::get('/user', 'HomepageController@showuser')->name('homeGeneral');
 
 Route::post('/odform', 'OnDutyController@store');
-
-Route::get('/admin', 'HomepageController@showadmin')->name('homeAdmin');
 
 Route::get('/login', 'SessionsController@create')->name('login');
 

@@ -36,8 +36,8 @@ class HomepageController extends Controller
     	$user_details = DB::select("
 			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id order by start_date desc
     	");
-        // dd($user_details);
-    	return view('recommending.recommend', compact('user_details'));
+ //$user_details = $user_details[0];
+     	return view('recommending.recommend', compact('user_details'));
     }
 
     //to show the approving authority homepage.

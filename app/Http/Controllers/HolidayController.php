@@ -15,4 +15,14 @@ class HolidayController extends Controller
         return view('holidaylist', compact('holiday'));
 
 }
+
+public function display1()
+{
+      $holiday = DB::select("
+          SELECT * FROM holidays ORDER BY date DESC
+      ");
+        return view('holidaylist1', compact('holiday'));
+
+}
+
 }

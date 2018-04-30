@@ -20,7 +20,7 @@ class AdminController extends Controller
             ", array($data));
 
         
-        return view('/admin/admin');
+        return back();
     
         
     }
@@ -29,7 +29,7 @@ class AdminController extends Controller
     	$user_details = DB::select("
 			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id order by start_date desc
     	");
-        // dd($user_details);
+        //dd($user_details);
     	return view('admin.admin', compact('user_details'));
     }
 
