@@ -14,7 +14,9 @@ class ApprovalController extends Controller
     	$user_details = DB::select("
 			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Recommended' order by start_date desc
     	");
-       // $user_details = $user_details[0]; // dd($user_details);
+
+        // $user_details = $user_details[0];
+        // dd($user_details);
     	return view('approving.leavependingapproval', compact('user_details'));
     }
 
@@ -24,7 +26,8 @@ class ApprovalController extends Controller
 			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Approved' order by start_date desc
     	");
         // dd($user_details);
-       // $user_details = $user_details[0]; 
+
+        //$user_details = $user_details[0];
     	return view('approving.leaveapproved', compact('user_details'));
     }
 
@@ -34,7 +37,8 @@ class ApprovalController extends Controller
 			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Rejected' order by start_date desc
     	");
         // dd($user_details);
-      //  $user_details = $user_details[0]; 
+
+        //$user_details = $user_details[0];
     	return view('approving.leaverejected', compact('user_details'));
     }
 
@@ -60,7 +64,7 @@ class ApprovalController extends Controller
         // dd($user_mail[0]->name);
 
         $num_days = DB::select("
-            SELECT no_of_days FROM casualleaves WHERE ID = ? 
+            SELECT no_of_days FROM casualleaves WHERE ID = ?
         ", array($id));
         $num_days = $num_days[0]->no_of_days;
 
@@ -94,9 +98,9 @@ class ApprovalController extends Controller
                 $counter++;
         }
 
-        
+
         DB::statement("
-            UPDATE leavebalances SET clbalance = ? WHERE emp_id = ?  
+            UPDATE leavebalances SET clbalance = ? WHERE emp_id = ?
         ", array($clbalance-$num_days+$counter, $user_mail[0]->emp_id));
 
         $admin_mail = DB::select("
@@ -127,7 +131,7 @@ class ApprovalController extends Controller
         DB::update("
             UPDATE casualleaves SET status = 'Rejected' WHERE ID=?
         ", array($id));
-       
+
         // dd($id);
 
         $user_mail = DB::select("

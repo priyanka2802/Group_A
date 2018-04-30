@@ -11,8 +11,62 @@ class RegistrationController extends Controller
 {
     // create a new user
     public function updateUsers(Request $request){
+      if ($request->hasFile('pan_pic'))
+{
+  $na=$request->file('pan_pic')->getClientOriginalName();
+$image = $request->file('pan_pic');
+$pan_pic = time().$na;
+$image->move('../public/images/', $pan_pic);
+}
+else
+{
+  $pan_pic="NULL";
+}
+ if ($request->hasFile('aadhaar_pic'))
+{
+$na=$request->file('aadhaar_pic')->getClientOriginalName();
+$image = $request->file('aadhaar_pic');
+$aadhaar_pic = time().$na;
+$image->move('../public/images/', $aadhaar_pic);
+}
+else {
+  $aadhaar_pic="NULL";
+}
 
-        User::updateUsers(request()->all());
+if ($request->hasFile('caste_pic'))
+{
+  $na=$request->file('caste_pic')->getClientOriginalName();
+$image = $request->file('caste_pic');
+$caste_pic = time().$na;
+$image->move('../public/images/', $caste_pic);
+}
+else {
+  $caste_pic="NULL";
+}
+
+   if ($request->hasFile('disability_pic')) {
+      $na=$request->file('disability_pic')->getClientOriginalName();
+$image = $request->file('disability_pic');
+$disability_pic = time().$na;
+$image->move('../public/images/', $disability_pic);
+
+}
+else {
+  $disability_pic="NULL";
+}
+
+ if ($request->hasFile('achievement_pic')) {
+  $na=$request->file('achievement_pic')->getClientOriginalName();
+$image = $request->file('achievement_pic');
+$achievement_pic = time().$na;
+$image->move('../public/images/', $achievement_pic);
+}
+else {
+  $achievement_pic="NULL";
+}
+
+
+        User::updateUsers(request()->all(),$pan_pic,$aadhaar_pic,$achievement_pic,$caste_pic,$disability_pic);
 
         return redirect()->route('homeAdmin');
 
@@ -21,9 +75,64 @@ class RegistrationController extends Controller
     // update user
     public function updateUser(Request $request){
 
-        User::updateUser(request()->all());
+             if ($request->hasFile('pan_pic'))
+{
+  $na=$request->file('pan_pic')->getClientOriginalName();
+$image = $request->file('pan_pic');
+$pan_pic = time().$na;
+$image->move('../public/images/', $pan_pic);
+}
+else
+{
+  $pan_pic="NULL";
+}
+ if ($request->hasFile('aadhaar_pic'))
+{
+$na=$request->file('aadhaar_pic')->getClientOriginalName();
+$image = $request->file('aadhaar_pic');
+$aadhaar_pic = time().$na;
+$image->move('../public/images/', $aadhaar_pic);
+}
+else {
+  $aadhaar_pic="NULL";
+}
 
-        return redirect()->route('homeGeneral');
+if ($request->hasFile('caste_pic'))
+{
+  $na=$request->file('caste_pic')->getClientOriginalName();
+$image = $request->file('caste_pic');
+$caste_pic = time().$na;
+$image->move('../public/images/', $caste_pic);
+}
+else {
+  $caste_pic="NULL";
+}
+
+   if ($request->hasFile('disability_pic')) {
+      $na=$request->file('disability_pic')->getClientOriginalName();
+$image = $request->file('disability_pic');
+$disability_pic = time().$na;
+$image->move('../public/images/', $disability_pic);
+
+}
+else {
+  $disability_pic="NULL";
+}
+
+ if ($request->hasFile('achievement_pic')) {
+  $na=$request->file('achievement_pic')->getClientOriginalName();
+$image = $request->file('achievement_pic');
+$achievement_pic = time().$na;
+$image->move('../public/images/', $achievement_pic);
+}
+else {
+  $achievement_pic="NULL";
+}
+
+
+        User::updateUser(request()->all(),$pan_pic,$aadhaar_pic,$achievement_pic,$caste_pic,$disability_pic);
+
+        return back();
 
     }
 
@@ -72,13 +181,21 @@ class RegistrationController extends Controller
     $pan_pic = time().$na;
     $image->move('../public/images/', $pan_pic);
    }
+   else {
+     $pan_pic="NULL";
+   }
        if ($request->hasFile('aadhaar_pic'))
     {
     $na=$request->file('aadhaar_pic')->getClientOriginalName();
     $image = $request->file('aadhaar_pic');
     $aadhaar_pic = time().$na;
     $image->move('../public/images/', $aadhaar_pic);
+
    }
+   else {
+     $aadhaar_pic="NULL";
+   }
+
 
      if ($request->hasFile('caste_pic'))
     {
@@ -87,10 +204,10 @@ class RegistrationController extends Controller
     $caste_pic = time().$na;
     $image->move('../public/images/', $caste_pic);
    }
-    else
-    {
-        $caste_pic="NULL";
-    }
+   else {
+     $caste_pic="NULL";
+     # code...
+   }
 
          if ($request->hasFile('disability_pic')) {
             $na=$request->file('disability_pic')->getClientOriginalName();
@@ -98,33 +215,37 @@ class RegistrationController extends Controller
     $disability_pic = time().$na;
     $image->move('../public/images/', $disability_pic);
 
-    }
-    else
-    {
+  }
+  else {
+    $disability_pic="NULL";
+  }
 
-        $disability_pic =  "NULL";
-    }
 
        if ($request->hasFile('achievement_pic')) {
         $na=$request->file('achievement_pic')->getClientOriginalName();
     $image = $request->file('achievement_pic');
     $achievement_pic = time().$na;
     $image->move('../public/images/', $achievement_pic);
+
     }
-    else
-    {
-        $achievement_pic =  "NULL";
+    else {
+      $achievement_pic="NULL";
     }
 
         if ($request->hasFile('photo')) {
     $image = $request->file('photo');
     $name = time().'.'.$image->getClientOriginalExtension();
     $image->move('../public/images/', $name);
+
    /* $disability_pic = 'NULL';
     $achievement_pic ='NULL';
     $pan ='NULL';
     $aadhaar_pic ='NULL';
 */
+  }
+  else {
+    $name="NULL";
+  }
 
 
     	//FOR AUTHENTICATION PURPOSE.
@@ -138,8 +259,9 @@ class RegistrationController extends Controller
         ", array($user['emp_id'], $user['cl_balance']));
 
 
+
     	return redirect()->route('homeAdmin');
 
     }
 }
-}
+

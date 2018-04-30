@@ -17,10 +17,14 @@
 Route::get('/calendar', function() {
     return view('calendar');
 });
+Route::get('/user_profile', 'HomepageController@user_profile');
 
-Route::get('/c', function() {
-    return view('admin.applicantedit');
-});
+Route::get('/holidaylist', 'HolidayController@display');
+
+
+Route::get('/Displayholidays', 'AdminController@displayHolidays');
+
+Route::post('/Addholidays', 'AdminController@Addholidays');
 
 
 Route::post('/u', 'RegistrationController@updateUsers');
@@ -50,6 +54,8 @@ Route::get('/sclform', 'sclController@show');
 Route::get('/studyform', 'studyController@show');
 
 Route::get('/leave_history', 'HomepageController@show_leaves_history');
+
+Route::get('/leave_history_approving', 'HomepageController@show_leaves_history_approving');
 
 Route::get('/user', 'HomepageController@showuser')->name('homeGeneral');
 
@@ -95,6 +101,11 @@ Route::get('/approved/{user_details}', 'ApprovalController@updatestatus1');
 
 Route::get('/update/{user_details}', 'HomepageController@showuserdetails');
 
+Route::get('/admin', 'AdminController@showadmin')->name('homeAdmin');
 
 Route::get('/rejected/{user_details}', 'ApprovalController@updatestatus2');
+
+
+
+Route::get('/admin/{user_details}', 'AdminController@showleavedetails');
 

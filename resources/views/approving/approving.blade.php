@@ -1,4 +1,4 @@
-@extends ('approving.approvinglayout')
+@extends('approving.approvinglayout')
 
 
 @section('head')
@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-   
+
 <div class="container-fluid">
 <div class="post-list">
 <hr>

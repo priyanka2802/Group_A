@@ -77,6 +77,15 @@ class OnDutyController extends Controller
                 ");
                 //dd(request()->input('pdf_file'));
                     Mail::send(['text'=>'mail/ondutyMail'],$data,function($message) use ($admin_mail)
+<<<<<<< HEAD
+                {
+                        $file = request()->input('pdf_file');
+                        $pdf_file = "images/".$file;
+                        $message->to($admin_mail[0]->email,$admin_mail[0]->name)->subject('Leave Submitted');
+                        $message->from('leavemanageriiti@gmail.com','Leave Manager');
+                        $message->attach(url($file));
+                });
+=======
                     {
                             $file = request()->input('pdf_file');
                             $pdf_file = "Images/".$file;
@@ -84,6 +93,7 @@ class OnDutyController extends Controller
                             $message->from('leavemanageriiti@gmail.com','Leave Manager');
                             //$message->attach(asset($pdf_file));
                     });
+>>>>>>> debda931b7dbdf1d4396f4742a5d0b5d15c3e8da
                     // dd($recommend_details);
 
                     Mail::send(['text'=>'mail/ondutyMail'],$data,function($message) use ($recommend_details)

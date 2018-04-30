@@ -24,7 +24,7 @@
 			<table class="table">
     <tbody>
       <tr>
-        <td><img height="200" width="300" src="/images/{{ $user_details->photo }}"</td>
+        <td><img height="200" width="300" src="{{ asset("images/$user_details->photo ") }}"</td>
         <td >
         <span style="font-weight: bold  ">{{ $user_details->name }}</span></td>
       </tr>

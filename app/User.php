@@ -38,8 +38,9 @@ class User extends Authenticatable
         return $details;
     }
 
-    public static function updateUsers($user) {
 
+
+    public static function updateUsers($user,$pan_pic,$aadhaar_pic,$achievement_pic,$caste_pic,$disability_pic) {
         DB::update("
             UPDATE users SET
             emp_type      = ?,
@@ -64,14 +65,53 @@ class User extends Authenticatable
             children      = ?
             where emp_id = ?
 
+
         ", array($user['emp_type'], $user['email'],  $user['dob'], $user['sex'], $user['address'], $user['religion'], $user['caste'], $user['contact'], $user['category'], $user['physically_disabled'], $user['pnt_no'], $user['appointed_on_quota'], $user['discipline'], $user['achievements'], $user['hometown'], $user['pan_no'], $user['aadhaar'], $user['salary'], $user['marital_status'], $user['children'], $user['emp_id']));
 
+if($pan_pic!="NULL")
+        {
+          DB::update("
+              UPDATE users SET
+              pan_pic = ?
+              where emp_id=? ",array($pan_pic,$user['emp_id']));
+
+        }
+        if($achievement_pic!="NULL")
+        {
+          DB::update("
+              UPDATE users SET
+              achievement_pic = ?
+              where emp_id=? ",array($achievement_pic,$user['emp_id']));
+
+        }
+        if($caste_pic!="NULL")
+        {
+          DB::update("
+              UPDATE users SET
+              caste_pic = ?
+              where emp_id=? ",array($caste_pic,$user['emp_id']));
+        }
+        if($disability_pic!="NULL")
+        {
+          DB::update("
+              UPDATE users SET
+              disability_pic = ?
+              where emp_id=? ",array($disability_pic,$user['emp_id']));
+
+        }
+        if($aadhaar_pic!="NULL")
+        {
+          DB::update("
+              UPDATE users SET
+              aadhaar_pic = ?
+              where emp_id=? ",array($aadhaar_pic,$user['emp_id']));
+      }
 
 
     }
 
 
-    public static function updateUser($user) {
+    public static function updateUser($user,$pan_pic,$aadhaar_pic,$achievement_pic,$caste_pic,$disability_pic) {
 // dd(auth()->id());
         DB::update("
             UPDATE users SET
@@ -98,9 +138,48 @@ class User extends Authenticatable
 
         ", array($user['name'], $user['email'],  $user['dob'], $user['sex'], $user['address'], $user['religion'], $user['caste'], $user['contact'], $user['category'], $user['physically_disabled'], $user['pnt_no'], $user['appointed_on_quota'], $user['discipline'], $user['achievements'], $user['hometown'], $user['pan_no'], $user['aadhaar'], $user['marital_status'], $user['children'], auth()->id()));
 
+
+        if($pan_pic!="NULL")
+        {
+          DB::update("
+              UPDATE users SET
+              pan_pic = ?
+              where id=? ",array($pan_pic,auth()->id()));
+
+        }
+        if($achievement_pic!="NULL")
+        {
+          DB::update("
+              UPDATE users SET
+              achievement_pic = ?
+              where id=? ",array($achievement_pic,auth()->id()));
+
+        }
+        if($caste_pic!="NULL")
+        {
+          DB::update("
+              UPDATE users SET
+              caste_pic = ?
+              where id=? ",array($caste_pic,auth()->id()));
+        }
+        if($disability_pic!="NULL")
+        {
+          DB::update("
+              UPDATE users SET
+              disability_pic = ?
+              where id=? ",array($disability_pic,auth()->id()));
+
+        }
+        if($aadhaar_pic!="NULL")
+        {
+          DB::update("
+              UPDATE users SET
+              aadhaar_pic = ?
+              where id=? ",array($aadhaar_pic,auth()->id()));
+}
+
+
     }
-
-
 
 
     //to insert info into users table.

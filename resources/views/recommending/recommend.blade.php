@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-   
+
 <div class="container-fluid">
 <div class="post-list">
 <hr>
@@ -39,10 +39,5 @@
 @endforeach
     </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div>
 
 @endsection
