@@ -27,6 +27,35 @@
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 <style>
+
+.hey {
+    border: 10px solid #fff;
+    border-bottom: 15px solid #fff;
+    -webkit-box-shadow: 3px 3px 3px #777;
+    -moz-box-shadow: 3px 3px 3px #777;
+    box-shadow: 3px 3px 3px #777;
+
+     -webkit-transition: margin 0.2s ease-out;
+    -moz-transition: margin 0.2s ease-out;
+    -o-transition: margin 0.2s ease-out;
+}
+}
+.hey p {
+    text-align: center;
+    color: #D51386;
+}
+.hey a {
+    -webkit-transition: margin 0.2s ease-out;
+    -moz-transition: margin 0.2s ease-out;
+    -o-transition: margin 0.2s ease-out;
+}
+.hey a:hover {
+    margin-bottom: 5px;
+}
+
+.hey:hover{
+    margin-top: -10px;
+}
     @yield('style')
 </style>
 </head>
@@ -96,13 +125,10 @@
                     </div>
                     </li>
                     <li class="menu-item">
-                        <a href="/holidaylist" > <i class="menu-icon fa fa-pencil"></i>Manage Holidays</a>
+                        <a href="/holidaylist" > <i class="menu-icon fa fa-pencil"></i>Holidays</a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-table"></i>Manage Leaves</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" > <i class="menu-icon fa fa-table"></i>Check Status Of Leaves</a>
+                        <a href="/Addholidays" > <i class="menu-icon fa fa-table"></i>Add Holidays</a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ url('/calendar') }}" > <i class="menu-icon fa fa-table"></i>Calendar</a>

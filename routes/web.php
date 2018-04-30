@@ -24,6 +24,10 @@ Route::get('/holidaylist', function() {
 });
 
 
+
+Route::get('/Addholidays', 'AdminController@Addholidays');
+
+
 Route::post('/u', 'RegistrationController@updateUsers');
 
 
@@ -93,6 +97,11 @@ Route::get('/approved/{user_details}', 'ApprovalController@updatestatus1');
 
 Route::get('/update/{user_details}', 'HomepageController@showuserdetails');
 
-
+Route::get('/admin', 'AdminController@showadmin')->name('homeAdmin');
 
 Route::get('/rejected/{user_details}', 'ApprovalController@updatestatus2');
+
+
+
+Route::get('/admin/{user_details}', 'AdminController@showleavedetails');
+

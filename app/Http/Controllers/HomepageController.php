@@ -12,9 +12,7 @@ use Event;
 class HomepageController extends Controller
 {
     //to show the admin homepage.
-    public function showadmin() {
-    	return view('admin.admin');
-    }
+    
 
     //to show the user homepage.
     public function showuser() {
