@@ -24,13 +24,19 @@
 			<table class="table">
     <tbody>
       <tr>
-        <td><img src="/images/{{ $user_details->photo }}"</td>
-        <td ><span style="font-size: 100px  ">{{ $user_details->name }}</span></td>
+        <td><img height="200" width="300" src="/images/{{ $user_details->photo }}"</td>
+        <td >
+        <span style="font-weight: bold  ">{{ $user_details->name }}</span></td>
       </tr>
       <tr>
         <td style="font-weight: bold;">Employee Code</td>
         <td>{{ $user_details->emp_id }}</td>
       </tr>
+       <tr>
+        <td style="font-weight: bold;">Employee Type</td>
+        <td>{{ $user_details->emp_type }}</td>
+      </tr>
+      
       <tr>
         <td style="font-weight: bold;">Date of Birth</td>
         <td>{{ $user_details->dob }}</td>

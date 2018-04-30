@@ -6,26 +6,61 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>User</title>
+    <title>Admin</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="{{ URL::asset('apple-icon.png') }}">
+    <link rel="shortcut icon" href="{{ URL::asset('favicon.ico') }}">
     @yield('head')
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/cs-skin-elastic.css') }}">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
-    <link rel="stylesheet" href="assets/scss/style.css">
-    <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('assets/scss/style.css') }}">
+    <link href="{{ URL::asset('assets/css/lib/vector-map/jqvmap.min.css') }}" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+<style>
+
+.hey {
+    border: 10px solid #fff;
+    border-bottom: 15px solid #fff;
+    -webkit-box-shadow: 3px 3px 3px #777;
+    -moz-box-shadow: 3px 3px 3px #777;
+    box-shadow: 3px 3px 3px #777;
     
+     -webkit-transition: margin 0.2s ease-out;
+    -moz-transition: margin 0.2s ease-out;
+    -o-transition: margin 0.2s ease-out;
+}
+}
+.hey p {
+    text-align: center;
+    color: #D51386;
+}
+.hey a {
+    -webkit-transition: margin 0.2s ease-out;
+    -moz-transition: margin 0.2s ease-out;
+    -o-transition: margin 0.2s ease-out;
+}
+.hey a:hover {
+    margin-bottom: 5px;
+}
+
+.hey:hover{
+    margin-top: -10px;    
+}
+    @yield('style')
+</style>  
 </head>
 <body>
 
@@ -39,77 +74,77 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#"><img style="margin:30px 5px" class="img-responsive" height="100"  width="100" src="{{ URL::asset('images/iit.jpg') }}" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="#"><img style="margin:30px 5px" class="img-responsive" height="100"  width="100" src="{{ URL::asset('images/iit.jpg') }}" alt="Logo"></a>
+                <a class="navbar-brand" href="./"><img style="margin:30px 5px" class="img-responsive" height="100"  width="100" src="{{ URL::asset('images/iit.jpg') }}" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="{{ URL::asset('images/iit.jpg') }}" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="#"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href=""{{ url('/admin') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">Elements</h3><!-- /.menu-title -->
                     <li class="menu-item">
-                        <a href="register" > <i class="menu-icon fa fa-user"></i>Profile Update</a>
+                        <a href="{{ url('/register') }}" > <i class="menu-icon fa fa-user"></i>Create User</a>
                         
                     </li>
                     <li class="menu-item">
-
-                        <a href="/listofleaves" > <i class="menu-icon fa fa-table"></i>Apply Leave</a>
-                        
-
-                    </li>
-                    <li class="menu-item">
-                        <a href="#"  data-toggle="modal" data-target="#myModal" > <i class="menu-icon fa fa-pencil"></i>Check Leave Balance</a>
-<!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog"  >
-    <div class="modal-dialog" style="position:center;">
+                        <a href="#"  data-toggle="modal" data-target="#myModal" > <i class="menu-icon fa fa-pencil"></i>Delete User</a>
+                       <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
     
       <!-- Modal content-->
-      <div class="mod al-content"  style="position:center;background-color:white;">
-        <div class="modal-header">
-          <h2 class="modal-title">Leave balances</h2>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-
-          <ul>
-          <div class="container-fluid">
-        
-          <li>Casual leaves: {{ $user_details->cl_balance }}</li>
-          <li>Special casual leaves: {{ $user_details->cl_balance }}</li>
-          <li>On duty leaves: {{ $user_details->cl_balance }}</li>
-          <li>Half pay leaves: {{ $user_details->cl_balance }}</li>
-          <li>Earned leaves: {{ $user_details->cl_balance }}</li>
-          <li>Maternity leaves: {{ $user_details->cl_balance }}</li>
-          <li>Paternity leaves: {{ $user_details->cl_balance }}</li>
-          <li>Study leaves: {{ $user_details->cl_balance }}</li>
-          <li>Extraordinary leaves: {{ $user_details->cl_balance }}</li>
-          <li>Vacation leaves: {{ $user_details->cl_balance }}</li>
-
-          </div>
-          
-          
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+<div class="container">
+                        <div class="modal-content" style="position:center">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Delete User</h4>
+                            
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/delete" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            {{ csrf_field() }}
+                                @include ('errors.errors')
       
-    </div>
-  </div>
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="emp_id" class=" form-control-label">Employee Id</label></div>
+                            <div class="col-12 col-md-9"><input type="text" placeholder="Employee Id" id="emp_id" name="emp_id" p class="form-control">
+                            </div>
+                          </div>
+                          <div>
+                          <button id="submit" type="submit" class="btn btn-lg btn-info btn-block">
+                                              <span id="submit">Delete</span>
+                                         </button>
+                                      </div>
+                        </form>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+      
+                            </div>
   
-
-
+                    </div>     
                     </li>
                     <li class="menu-item">
-                        <a href="/leave_history" > <i class="menu-icon fa fa-pencil"></i>Leave History</a>
+                        <a href="#" > <i class="menu-icon fa fa-pencil"></i>Manage Holidays</a>
                     </li>
                     <li class="menu-item">
-                        <a href="/logout" > <i class="menu-icon fa fa-table"></i>Logout</a>
+                        <a href="#" > <i class="menu-icon fa fa-table"></i>Manage Leaves</a>
                     </li>
-                    
+                    <li class="menu-item">
+                        <a href="#" > <i class="menu-icon fa fa-table"></i>Check Status Of Leaves</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ url('/calendar') }}" > <i class="menu-icon fa fa-table"></i>Calendar</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ url('/search') }}" > <i class="menu-icon fa fa-search"></i>Search</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ url('/logout') }}" > <i class="menu-icon fa fa-table"></i>Logout</a>
+                    </li>
                     
                    
                     
@@ -213,7 +248,7 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{{ asset("images/$user_details->photo ") }}" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="{{ URL::asset('images/admin.jpg') }}" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -251,27 +286,57 @@
             </div>
 
         </header><!-- /header -->
-   
+   <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            
+         <div class="content mt-4">
+            <div class="animated fadeIn">
+
+
+                  <div class="col-lg-12">
+
+                                    <ul class="nav nav-pills ">
+        <li><a href="/approval" style="font-weight: bold">All</a></li>
+        <li><a href="/leavependingapproval" style="font-weight: bold">Pending</a></li>
+        <li><a href="/leaveapproved" style="font-weight: bold">Approved</a></li>
+        <li><a href="/leaverejected" style="font-weight: bold">Rejected</a></li>
+    
+    </ul>
+ 
+
+
+                    <div class="card">
+ 
 
     @yield('content')
-
+    </div>
+</div>
+ </div>
+</div>
+</div>
     <!-- Right Panel -->
 
-    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="{{ URL::asset('assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{ URL::asset('assets/js/plugins.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/main.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-    <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
-    <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/widgets.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
-    <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+    <script src="{{ URL::asset('assets/js/lib/chart-js/Chart.bundle.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/dashboard.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/widgets.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/lib/vector-map/jquery.vmap.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/lib/vector-map/jquery.vmap.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/lib/vector-map/jquery.vmap.sampledata.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/lib/vector-map/country/jquery.vmap.world.js') }}"></script>
     <script>
         ( function ( $ ) {
             "use strict";

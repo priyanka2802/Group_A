@@ -81,6 +81,10 @@ class RegistrationController extends Controller
     $caste_pic = time().$na;
     $image->move('../public/images/', $caste_pic);
    }
+    else
+    {
+        $caste_pic="NULL";
+    }
 
          if ($request->hasFile('disability_pic')) {
             $na=$request->file('disability_pic')->getClientOriginalName();

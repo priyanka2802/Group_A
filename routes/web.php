@@ -30,6 +30,8 @@ Route::get('/search', 'HomepageController@showall')->name('homeAdmin');
 
 Route::get('/clform', 'CasualleaveController@show');
 
+Route::post('/clform', 'CasualleaveController@store');
+
 Route::post('/delete', 'AdminController@delete_user');
 
 Route::get('/odform', 'OnDutyController@show');
