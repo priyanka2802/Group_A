@@ -37,40 +37,71 @@ class User extends Authenticatable
         $details = $details[0];
         return $details;
     }
-    
-    public static function updateUser($user) {
+
+    public static function updateUsers($user) {
 
         DB::update("
-            UPDATE users SET 
+            UPDATE users SET
             emp_type      = ?,
             email         = ?,
             dob           = ?,
             sex        = ? ,
-            address       = ?, 
+            address       = ?,
             religion      = ? ,
             caste        = ?,
             contact    = ? ,
             category      = ? ,
-            physically_disabled = ?, 
+            physically_disabled = ?,
             pnt_no        = ? ,
-            appointed_on_quota = ?, 
+            appointed_on_quota = ?,
             discipline   = ? ,
             achievements  = ? ,
             hometown      = ? ,
             pan_no        = ?,
             aadhaar     = ?,
-            salary        = ?, 
+            salary        = ?,
             marital_status= ? ,
             children      = ?
             where emp_id = ?
- 
-        ", array($user['emp_type'], $user['email'],  $user['dob'], $user['sex'], $user['address'], $user['religion'], $user['caste'], $user['contact'], $user['category'], $user['physically_disabled'], $user['pnt_no'], $user['appointed_on_quota'], $user['discipline'], $user['achievements'], $user['hometown'], $user['pan_no'], $user['aadhaar'], $user['salary'], $user['marital_status'], $user['children'], $user['emp_id']));
-        
 
-        
+        ", array($user['emp_type'], $user['email'],  $user['dob'], $user['sex'], $user['address'], $user['religion'], $user['caste'], $user['contact'], $user['category'], $user['physically_disabled'], $user['pnt_no'], $user['appointed_on_quota'], $user['discipline'], $user['achievements'], $user['hometown'], $user['pan_no'], $user['aadhaar'], $user['salary'], $user['marital_status'], $user['children'], $user['emp_id']));
+
+
+
     }
 
-    
+
+    public static function updateUser($user) {
+// dd(auth()->id());
+        DB::update("
+            UPDATE users SET
+            name = ?,
+            email         = ?,
+            dob           = ?,
+            sex        = ? ,
+            address       = ?,
+            religion      = ? ,
+            caste        = ?,
+            contact    = ? ,
+            category      = ? ,
+            physically_disabled = ?,
+            pnt_no        = ? ,
+            appointed_on_quota = ?,
+            discipline   = ? ,
+            achievements  = ? ,
+            hometown      = ? ,
+            pan_no        = ?,
+            aadhaar     = ?,
+            marital_status= ? ,
+            children      = ?
+            where id = ?
+
+        ", array($user['name'], $user['email'],  $user['dob'], $user['sex'], $user['address'], $user['religion'], $user['caste'], $user['contact'], $user['category'], $user['physically_disabled'], $user['pnt_no'], $user['appointed_on_quota'], $user['discipline'], $user['achievements'], $user['hometown'], $user['pan_no'], $user['aadhaar'], $user['marital_status'], $user['children'], auth()->id()));
+
+    }
+
+
+
 
     //to insert info into users table.
 
@@ -110,7 +141,7 @@ class User extends Authenticatable
             'achievement_pic' => $achievement_pic,
             'caste_pic' => $caste_pic
         ]);
-        
+
 
         auth()->login($user);
 }

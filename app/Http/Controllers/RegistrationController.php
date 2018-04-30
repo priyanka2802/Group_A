@@ -12,19 +12,25 @@ class RegistrationController extends Controller
     // create a new user
     public function updateUsers(Request $request){
 
-       
+        User::updateUsers(request()->all());
+
+        return redirect()->route('homeAdmin');
+
+    }
+
+    // update user
+    public function updateUser(Request $request){
 
         User::updateUser(request()->all());
 
-        return redirect()->route('homeAdmin'); 
-            
-        
+        return redirect()->route('homeGeneral');
+
     }
 
     public function create() {
     	return view('register');
     }
-    
+
 
     // store the information of the user
     public function store(Request $request) {
@@ -60,7 +66,7 @@ class RegistrationController extends Controller
 
     	]);
             if ($request->hasFile('pan_pic'))
-     {   
+     {
         $na=$request->file('pan_pic')->getClientOriginalName();
    $image = $request->file('pan_pic');
     $pan_pic = time().$na;
@@ -119,7 +125,7 @@ class RegistrationController extends Controller
     $pan ='NULL';
     $aadhaar_pic ='NULL';
 */
-    
+
 
     	//FOR AUTHENTICATION PURPOSE.
     	User::insert_into_user(request()->all(),$name,$disability_pic,$achievement_pic,$pan_pic,$aadhaar_pic,$caste_pic);
@@ -128,12 +134,12 @@ class RegistrationController extends Controller
         //insert into leavebalances table.
         $user = request()->all();
         DB::statement("
-            INSERT INTO leavebalances (emp_id, clbalance) VALUES (?,?) 
+            INSERT INTO leavebalances (emp_id, clbalance) VALUES (?,?)
         ", array($user['emp_id'], $user['cl_balance']));
 
 
     	return redirect()->route('homeAdmin');
-    
-    } 
+
+    }
 }
 }

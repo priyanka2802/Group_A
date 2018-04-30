@@ -61,6 +61,15 @@ class HomepageController extends Controller
         return view('admin.applicantedit', compact('user_details'));
     }
 
+     public function showuserdetails1() {
+        $user_details = DB::select("
+            SELECT * FROM users WHERE id=?
+        ", array(auth()->id()));
+        $user_details = $user_details[0];
+       // dd ($user_details);
+        return view('applicant.useredit', compact('user_details'));
+    }
+
     public function show_leaves_history() {
         $emp_id = DB::select("
             SELECT emp_id FROM users WHERE id = ?
@@ -70,7 +79,7 @@ class HomepageController extends Controller
             SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id WHERE users.emp_id=?
         order by casualleaves.start_date desc", array($emp_id[0]->emp_id));
         // dd($user_details);
-        
+
         //firing an event
       // Event::fire(new updateSalary($emp_id));
 

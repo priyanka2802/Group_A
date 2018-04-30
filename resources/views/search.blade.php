@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            
+
          <div class="content mt-4">
             <div class="animated fadeIn">
 
@@ -51,7 +51,7 @@
     </tr>
     </thead>
     <tbody id="myTable">
-    	
+
     	@foreach( $details as $user_details)
     <tr>
     	<td><a href="/update/{{$user_details->emp_id}}">{{$user_details->emp_id}}</a></td>
@@ -68,7 +68,7 @@
     </tbody>
     </tbody>
   </table>
-  
+
                     </div>
                 </div>
 

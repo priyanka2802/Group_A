@@ -25,6 +25,9 @@ Route::get('/c', function() {
 
 Route::post('/u', 'RegistrationController@updateUsers');
 
+Route::get('/useredit', 'HomepageController@showuserdetails1');
+
+Route::post('/useredit', 'RegistrationController@updateUser');
 
 Route::get('/search', 'HomepageController@showall');
 
