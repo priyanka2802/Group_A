@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </div>
-            
+
          <div class="content mt-4">
             <div class="animated fadeIn">
                 <div class="card">
@@ -30,5 +30,4 @@
 </div><!--/.col-->
 </div>
 </div>
-@endsection       
- 
+@endsection

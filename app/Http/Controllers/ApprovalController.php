@@ -14,8 +14,12 @@ class ApprovalController extends Controller
     	$user_details = DB::select("
 			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Recommended' order by start_date desc
     	");
+<<<<<<< HEAD
         // $user_details = $user_details[0]; 
         // dd($user_details);
+=======
+       // $user_details = $user_details[0]; // dd($user_details);
+>>>>>>> debda931b7dbdf1d4396f4742a5d0b5d15c3e8da
     	return view('approving.leavependingapproval', compact('user_details'));
     }
 
@@ -25,7 +29,11 @@ class ApprovalController extends Controller
 			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Approved' order by start_date desc
     	");
         // dd($user_details);
+<<<<<<< HEAD
         //$user_details = $user_details[0]; 
+=======
+       // $user_details = $user_details[0]; 
+>>>>>>> debda931b7dbdf1d4396f4742a5d0b5d15c3e8da
     	return view('approving.leaveapproved', compact('user_details'));
     }
 
@@ -35,7 +43,11 @@ class ApprovalController extends Controller
 			SELECT * FROM casualleaves JOIN users ON casualleaves.emp_id = users.emp_id AND casualleaves.status = 'Rejected' order by start_date desc
     	");
         // dd($user_details);
+<<<<<<< HEAD
         //$user_details = $user_details[0]; 
+=======
+      //  $user_details = $user_details[0]; 
+>>>>>>> debda931b7dbdf1d4396f4742a5d0b5d15c3e8da
     	return view('approving.leaverejected', compact('user_details'));
     }
 

@@ -17,16 +17,17 @@
 Route::get('/calendar', function() {
     return view('calendar');
 });
+Route::get('/user_profile/{user_details}', 'HomepageController@user_profile');
 
-Route::get('/c', function() {
-    return view('admin.applicantedit');
+Route::get('/holidaylist', function() {
+    return view('holidaylist');
 });
 
 
 Route::post('/u', 'RegistrationController@updateUsers');
 
 
-Route::get('/search', 'HomepageController@showall')->name('homeAdmin');
+Route::get('/search', 'HomepageController@showall');
 
 Route::get('/clform', 'CasualleaveController@show');
 
@@ -93,5 +94,5 @@ Route::get('/approved/{user_details}', 'ApprovalController@updatestatus1');
 Route::get('/update/{user_details}', 'HomepageController@showuserdetails');
 
 
-Route::get('/rejected/{user_details}', 'ApprovalController@updatestatus2');
 
+Route::get('/rejected/{user_details}', 'ApprovalController@updatestatus2');

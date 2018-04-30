@@ -17,15 +17,16 @@ class CasualleaveController extends Controller
 
 
     	$user_details = User::getUserDetails(auth()->id());
+        // dd($user_details);
 
         $all_leave_details = DB::select("
             SELECT * FROM casualleaves WHERE emp_id = ? ORDER BY end_date DESC
         ", array($user_details->emp_id));
-        
+
 
         $date1 = new DateTime(request()->all()['start_date']);
         $date2 = new DateTime($all_leave_details[0]->end_date);
-        
+
         if($date1 <= $date2)
         {
             return back()->withErrors([
@@ -56,9 +57,9 @@ class CasualleaveController extends Controller
 
 
         $emp_type = $user_details->emp_type;
-    	
+
         $data = array('name'=>$user_details->name,'id'=>$user_details->emp_id,'purpose'=>request()->input('purpose'),'date'=>request()->input('start_date'),'days'=>request()->input('num_days'),'contact'=>request()->input('contact'),'Recommending'=>request()->input('recommending'),'Approving'=>request()->input('approving'));
-        $mailId1 =request()->input('recommending'); 
+        $mailId1 =request()->input('recommending');
         $mailId2 =request()->input('approving');
 
             $recommend_details = DB::select("
@@ -74,13 +75,13 @@ class CasualleaveController extends Controller
             if($recommend_details == NULL){
                 return back()->withErrors([
                     'message' => 'Please check Recommending Authority Email Id'
-                    ]);            
+                    ]);
             }
 
             else if($approve_details == NULL){
                 return back()->withErrors([
                     'message' => 'Please check Approving Authority Email Id'
-                    ]); 
+                    ]);
             }
 
             else if($emp_type == 'general')
@@ -89,7 +90,7 @@ class CasualleaveController extends Controller
                 if($recommend_details[0]->emp_type != 'recommending'){
                     return back()->withErrors([
                         'message' => 'Please check Recommending Authority Email Id'
-                        ]); 
+                        ]);
 
                 }
 
@@ -107,7 +108,7 @@ class CasualleaveController extends Controller
                     $admin_mail = DB::select("
                     SELECT name, email FROM users WHERE emp_type = 'Admin'
                 ");
-                // dd($user_mail[0]->name);
+                // dd($admin_mail[0]->name);
                     Mail::send(['text'=>'mail/mailleavesubmit'],$data,function($message) use ($admin_mail)
                 {
                         $message->to($admin_mail[0]->email,$admin_mail[0]->name)->subject('Leave Submitted');
@@ -129,7 +130,7 @@ class CasualleaveController extends Controller
                 if($recommend_details[0]->emp_type != 'approval' OR $approve_details[0]->emp_type != 'approval' OR $mailId1 != $mailId2){
                     return back()->withErrors([
                         'message' => 'Please check Recommending and Approving Authority Email Ids'
-                        ]); 
+                        ]);
 
                 }
                 Casualleave::insertIntoCasualleaves($user_details, request()->all());
@@ -137,6 +138,7 @@ class CasualleaveController extends Controller
                  $admin_mail = DB::select("
                     SELECT name, email FROM users WHERE emp_type = 'Admin'
                 ");
+               auth()->user()->notify(new addNot());
                  // dd($admin_mail);
             // dd($user_mail[0]->name);
 
@@ -160,7 +162,7 @@ class CasualleaveController extends Controller
     public function show() {
     	return view('/applicant/clform');
     }
-	
+
 	 public function showlist(){
         return view('/applicant/listofleaves');
     }
