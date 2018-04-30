@@ -24,9 +24,9 @@ class OnDutyController extends Controller
     	$user_details = User::getUserDetails(auth()->id());
 
         $emp_type = $user_details->emp_type;
-    	
+
         $data = array('name'=>$user_details->name,'id'=>$user_details->emp_id,'Leave_info'=>request()->input('Leave info'),'start_date'=>request()->input('start_date'),'end_date'=>request()->input('end_date'),'contact'=>request()->input('contact'),'conference'=>request()->input('conference'),'Recommending'=>request()->input('recommending'),'Approving'=>request()->input('approving'), 'pdf_file'=>request()->file('pdf_file'));
-        $mailId1 =request()->input('recommending'); 
+        $mailId1 =request()->input('recommending');
         $mailId2 =request()->input('approving');
 
             $recommend_details = DB::select("
@@ -42,13 +42,13 @@ class OnDutyController extends Controller
             if($recommend_details == NULL){
                 return back()->withErrors([
                     'message' => 'Please check Recommending Authority Email Id'
-                    ]);            
+                    ]);
             }
 
             else if($approve_details == NULL){
                 return back()->withErrors([
                     'message' => 'Please check Approving Authority Email Id'
-                    ]); 
+                    ]);
             }
 
             else if($emp_type == 'general')
@@ -57,7 +57,7 @@ class OnDutyController extends Controller
                 if($recommend_details[0]->emp_type != 'recommending'){
                     return back()->withErrors([
                         'message' => 'Please check Recommending Authority Email Id'
-                        ]); 
+                        ]);
 
                 }
 
@@ -77,15 +77,7 @@ class OnDutyController extends Controller
                 ");
                 //dd(request()->input('pdf_file'));
                     Mail::send(['text'=>'mail/ondutyMail'],$data,function($message) use ($admin_mail)
-<<<<<<< HEAD
-                {
-                        $file = request()->input('pdf_file');
-                        $pdf_file = "images/".$file;
-                        $message->to($admin_mail[0]->email,$admin_mail[0]->name)->subject('Leave Submitted');
-                        $message->from('leavemanageriiti@gmail.com','Leave Manager');
-                        $message->attach(url($file));
-                });
-=======
+
                     {
                             $file = request()->input('pdf_file');
                             $pdf_file = "Images/".$file;
@@ -93,7 +85,6 @@ class OnDutyController extends Controller
                             $message->from('leavemanageriiti@gmail.com','Leave Manager');
                             //$message->attach(asset($pdf_file));
                     });
->>>>>>> debda931b7dbdf1d4396f4742a5d0b5d15c3e8da
                     // dd($recommend_details);
 
                     Mail::send(['text'=>'mail/ondutyMail'],$data,function($message) use ($recommend_details)
@@ -110,7 +101,7 @@ class OnDutyController extends Controller
                 if($recommend_details[0]->emp_type != 'approval' OR $approve_details[0]->emp_type != 'approval' OR $mailId1 != $mailId2){
                     return back()->withErrors([
                         'message' => 'Please check Recommending and Approving Authority Email Ids'
-                        ]); 
+                        ]);
 
                 }
                 OnDuty::insertIntoOnDuty($user_details, request()->all());

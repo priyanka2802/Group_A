@@ -40,7 +40,6 @@
         -o-transition: margin 0.2s ease-out;
         background-color: white;
     }
-    }
     .hey p {
         text-align: center;
         color: #D51386;

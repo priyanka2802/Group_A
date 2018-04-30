@@ -8,16 +8,6 @@
 
          <div class="col-lg-12">
 
- <ul class="nav nav-pills ">
-<li><a href="/approval" style="font-weight: bold;padding:10px;">All</a></li>
-<li><a href="/leavependingapproval" style="font-weight: bold;padding:10px;">Pending</a></li>
-<li><a href="/leaveapproved" style="font-weight: bold;padding:10px;">Recommended</a></li>
-<li><a href="/leaverejected" style="font-weight: bold;padding:10px;">Reverted Back</a></li>
-
-</ul>
-
-
-
 <div class="card">
   <div class="container-fluid">
   <div class="post-list">
