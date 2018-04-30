@@ -19,9 +19,17 @@ Route::get('/calendar', function() {
 });
 Route::get('/user_profile/{user_details}', 'HomepageController@user_profile');
 
+Route::get('/user_profile1/{user_details}', 'HomepageController@user_profile1');
+
+
 Route::get('/holidaylist', 'HolidayController@display'); 
 
-Route::get('/holidaylist1', 'HolidayController@display1'); 
+Route::get('/holidaylist1', 'HolidayController@display1');
+
+
+
+Route::get('/holidaylist3', 'HolidayController@display3'); 
+Route::get('/holidaylist2', 'HolidayController@display2'); 
 
 
 

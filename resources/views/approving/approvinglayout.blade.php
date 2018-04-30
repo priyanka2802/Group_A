@@ -107,7 +107,7 @@
                     </li>
                     <h3 class="menu-title">Elements</h3><!-- /.menu-title -->
                     <li class="menu-item">
-                        <a href="/user_profile" > <i class="menu-icon fa fa-user"></i>Profile Update</a>
+                        <a href="/user_profile1/{{$user_details->emp_id}}" > <i class="menu-icon fa fa-user"></i>Profile Update</a>
 
                     </li>
                     <li class="menu-item">
@@ -263,36 +263,14 @@
                 </div>
             </div>
 
-         <div class="content mt-4">
-            <div class="animated fadeIn">
-
+         
 
                   <div class="col-lg-12">
-
-                                    <ul class="nav nav-pills ">
-        <li><a href="/approval" style="font-weight: bold">All</a></li>
-        <li><a href="/leavependingapproval" style="font-weight: bold">Pending</a></li>
-        <li><a href="/leaveapproved" style="font-weight: bold">Approved</a></li>
-        <li><a href="/leaverejected" style="font-weight: bold">Rejected</a></li>
-
-    </ul>
-
-
-      </header><!-- /header -->
- <div class="breadcrumbs">
-          <div class="col-sm-12">
-              <div class="page-header float-left">
-                  <div class="page-title">
-                      <h1>Dashboard</h1>
-                  </div>
-              </div>
-          </div>
-
-
 
   <div class="card">
     @yield('content')
   </div>
+</div>
 </div>
     <!-- Right Panel -->
 

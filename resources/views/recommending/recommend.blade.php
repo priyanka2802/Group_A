@@ -10,7 +10,31 @@
 @endsection
 
 @section('content')
+ <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
 
+         <div class="content mt-4">
+            <div class="animated fadeIn">
+
+
+                  <div class="col-lg-12">
+
+                                    <ul class="nav nav-pills ">
+        <li><a href="/recommend" style="font-weight: bold">All</a></li>
+        <li><a href="/leavepending" style="font-weight: bold">Pending</a></li>
+        <li><a href="/leaverecommended" style="font-weight: bold">Recommended</a></li>
+        <li><a href="/leavereverted" style="font-weight: bold">Reverted Back</a></li>
+
+    </ul>
+
+
+
+    <div class="card">
 <div class="container-fluid">
 <div class="post-list">
 <hr>
@@ -39,5 +63,6 @@
 @endforeach
     </div>
 </div>
-
+</div>
+</div>
 @endsection

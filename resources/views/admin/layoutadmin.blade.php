@@ -81,7 +81,7 @@
                     <li class="active">
                         <a href="{{ url('/admin') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <h3 class="mepnu-title">Elements</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">Elements</h3><!-- /.menu-title -->
                     <li class="menu-item">
                         <a href="{{ url('/register') }}" > <i class="menu-icon fa fa-user"></i>Create User</a>
 
@@ -236,7 +236,7 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{{ URL::asset('images/admin.jpg') }}" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="{{ URL::asset('images/1525101617.png') }}" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">

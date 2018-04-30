@@ -1,4 +1,4 @@
-@extends('approving.approvinglayout')
+@extends('applicant.applicantlayout')
 @section('content')
 <div class="breadcrumbs">
     

@@ -70,6 +70,7 @@ class CasualleaveController extends Controller
                 SELECT * FROM users WHERE email = ?
             ", array($mailId2));
 
+// dd($approve_details);
 
 
             if($recommend_details == NULL){
@@ -94,7 +95,7 @@ class CasualleaveController extends Controller
 
                 }
 
-                else if($approve_details[0]->emp_type != 'approval'){
+                else if($approve_details[0]->emp_type != 'approving'){
                     return back()->withErrors([
                         'message' => 'Please check Approving Authority Email Id'
                         ]);

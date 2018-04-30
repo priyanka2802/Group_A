@@ -67,6 +67,14 @@ class HomepageController extends Controller
     }
 
 
+    public function user_profile1($id) {
+        $user_details = DB::select("
+            SELECT * FROM users WHERE emp_id=?
+        ", array($id));
+        $user_details = $user_details[0];
+         return view('approving.edit', compact('user_details'));
+    }
+
     public function show_leaves_history() {
         $emp_id = DB::select("
             SELECT emp_id FROM users WHERE id = ?

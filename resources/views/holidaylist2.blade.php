@@ -1,4 +1,4 @@
-@extends('approving.approvinglayout')
+@extends('layouts.layoutrecommend')
 @section('content')
 <div class="breadcrumbs">
     

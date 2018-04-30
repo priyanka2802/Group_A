@@ -54,19 +54,16 @@
                         <a href="/user_profile/{{$user_details->emp_id}}" > <i class="menu-icon fa fa-user"></i>Profile Update</a>
 
                     </li>
+                    <li class="menu-item">
+                        <a href="/holidaylist3" > <i class="menu-icon fa fa-pencil"></i>Holidays</a>
+                    </li>
                      <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Apply Leave</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-th"></i><a href="/clform">Casual Leave</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="/sclform">Special Casual Leave</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="/odform">On-Duty Leave</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="/hplform">Half-Pay Leave</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="/elform">Earned Leave</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="/vactionform">Vacation</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="/eolform">Extra Ordinary </a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="/studyleave">Study Leave</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="/maternityform">Maternity Leave</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="/paternityform">Paternity Leave</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="/hplform">Other Leave</a></li>
 
                         </ul>
                     </li>
@@ -91,13 +88,6 @@
           <li>Casual leaves: {{ $user_details->cl_balance }}</li>
           <li>Special casual leaves: {{ $user_details->cl_balance }}</li>
           <li>On duty leaves: {{ $user_details->cl_balance }}</li>
-          <li>Half pay leaves: {{ $user_details->cl_balance }}</li>
-          <li>Earned leaves: {{ $user_details->cl_balance }}</li>
-          <li>Maternity leaves: {{ $user_details->cl_balance }}</li>
-          <li>Paternity leaves: {{ $user_details->cl_balance }}</li>
-          <li>Study leaves: {{ $user_details->cl_balance }}</li>
-          <li>Extraordinary leaves: {{ $user_details->cl_balance }}</li>
-          <li>Vacation leaves: {{ $user_details->cl_balance }}</li>
 
           </div>
 
