@@ -190,7 +190,7 @@ else {
         ", array($user['emp_id'], $user['cl_balance']));
 
 
-    //	return redirect()->route('homeAdmin');
+    return redirect()->route('homeAdmin');
 
 
 }

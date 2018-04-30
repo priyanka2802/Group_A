@@ -22,14 +22,14 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->date('dob');
             $table->date('joined_date')->default(NULL);
-            $table->enum('sex', array('M','F'));
+            $table->enum('sex', array('Male','Female'));
             $table->string('address');
             $table->string('religion');
             $table->string('caste');
             $table->bigInteger('contact');
             $table->string('salutation');
             $table->string('category');
-            $table->enum('physically_disabled', array('Y', 'N'));
+            $table->enum('physically_disabled', array('Yes', 'No'));
             $table->bigInteger('pnt_no');
             $table->string('appointed_on_quota');
             $table->string('discipline');

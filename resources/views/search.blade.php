@@ -43,7 +43,9 @@
         <th>Name</th>
         <th>Type</th>
         <th>Caste</th>
+
         <th>Date Of Birth</th>
+        <th>Sex</th>
         <th>Religion</th>
         <th>Aadhaar</th>
         <th>Disability</th>
@@ -59,6 +61,7 @@
     	<td>{{$user_details->emp_type}}</td>
     	<td>{{$user_details->caste}}</td>
         <td>{{$user_details->dob}}</td>
+        <td>{{$user_details->sex}}</td>
         <td>{{$user_details->religion}}</td>
         <td>{{$user_details->aadhaar}}</td>
         <td>{{$user_details->physically_disabled}}</td>

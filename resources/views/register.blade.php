@@ -79,12 +79,12 @@
                               <div class="form-check">
                                 <div class="radio">
                                   <label for="male" class="form-check-label ">
-                                    <input type="radio" id="male" name="sex" value="M" class="form-check-input">Male
+                                    <input type="radio" id="male" name="sex" value="Male" class="form-check-input">Male
                                   </label>
                                 </div>
                                 <div class="radio">
                                   <label for="female" class="form-check-label ">
-                                    <input type="radio" id="female" name="sex" value="F" class="form-check-input">Female
+                                    <input type="radio" id="female" name="sex" value="Female" class="form-check-input">Female
                                   </label>
                                 </div>
                              </div>
