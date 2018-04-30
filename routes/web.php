@@ -19,10 +19,7 @@ Route::get('/calendar', function() {
 });
 Route::get('/user_profile/{user_details}', 'HomepageController@user_profile');
 
-Route::get('/holidaylist', function() {
-    return view('holidaylist');
-});
-
+Route::get('/holidaylist', 'HolidayController@display'); 
 
 Route::post('/u', 'RegistrationController@updateUsers');
 
