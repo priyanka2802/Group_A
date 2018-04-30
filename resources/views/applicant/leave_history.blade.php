@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            
+
          <div class="content mt-4">
             <div class="animated fadeIn">
 
@@ -25,7 +25,7 @@
 <hr>
 @foreach($user_details as $user_details)
     <div class="container-fluid">
-        <header class="post-item-header">
+        <header class="hey">
             <h5>Leave ID: {{$user_details->ID}}</h5>
            <p class="post-item-meta">
              <span class="post-item-date">Leave start date: {{$user_details->start_date}}</span>
