@@ -296,9 +296,22 @@
 
         </header><!-- /header -->
 
+      </header><!-- /header -->
+ <div class="breadcrumbs">
+          <div class="col-sm-12">
+              <div class="page-header float-left">
+                  <div class="page-title">
+                      <h1>Dashboard</h1>
+                  </div>
+              </div>
+          </div>
 
+
+
+  <div class="card">
     @yield('content')
-
+  </div>
+</div>
     <!-- Right Panel -->
     <script src="{{ URL::asset('assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
