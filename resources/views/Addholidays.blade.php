@@ -45,7 +45,7 @@
                         <strong>Basic Form</strong> Elements
                       </div>
                       <div class="card-body card-block">
-                        <form action="/register" method="post" enctype="multipart/form-data" class="form-horizontal" data-toggle="validator">
+                        <form action="/Addholidays" method="post" enctype="multipart/form-data" class="form-horizontal" data-toggle="validator">
                         	{{ csrf_field() }}
       							@include ('errors.errors')
 
