@@ -29,8 +29,8 @@
         <span style="font-weight: bold  ">{{ $user_details->name }}</span></td>
       </tr>
       <tr>
-        <td style="font-weight: bold;">Employee Code</td>
-        <td>{{ $user_details->emp_id }}</td>
+        <td style="font-weight: bold;">Name</td>
+        <td>{{ $user_details->name }}</td>
       </tr>
        <tr>
         <td style="font-weight: bold;">Employee Type</td>
@@ -96,10 +96,6 @@
       <tr>
         <td style="font-weight: bold;">Appointed On Quota</td>
         <td>{{ $user_details->appointed_on_quota }}</td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">Salary</td>
-        <td>{{ $user_details->salary }}</td>
       </tr>
       <tr>
         <td style="font-weight: bold;">Achievements</td>

@@ -66,10 +66,73 @@ else {
 }
 
 
+        User::updateUsers(request()->all(),$pan_pic,$aadhaar_pic,$achievement_pic,$caste_pic,$disability_pic);
+
+        return redirect()->route('homeAdmin');
+
+    }
+
+    // update user
+    public function updateUser(Request $request){
+
+             if ($request->hasFile('pan_pic'))
+{
+  $na=$request->file('pan_pic')->getClientOriginalName();
+$image = $request->file('pan_pic');
+$pan_pic = time().$na;
+$image->move('../public/images/', $pan_pic);
+}
+else
+{
+  $pan_pic="NULL";
+}
+ if ($request->hasFile('aadhaar_pic'))
+{
+$na=$request->file('aadhaar_pic')->getClientOriginalName();
+$image = $request->file('aadhaar_pic');
+$aadhaar_pic = time().$na;
+$image->move('../public/images/', $aadhaar_pic);
+}
+else {
+  $aadhaar_pic="NULL";
+}
+
+if ($request->hasFile('caste_pic'))
+{
+  $na=$request->file('caste_pic')->getClientOriginalName();
+$image = $request->file('caste_pic');
+$caste_pic = time().$na;
+$image->move('../public/images/', $caste_pic);
+}
+else {
+  $caste_pic="NULL";
+}
+
+   if ($request->hasFile('disability_pic')) {
+      $na=$request->file('disability_pic')->getClientOriginalName();
+$image = $request->file('disability_pic');
+$disability_pic = time().$na;
+$image->move('../public/images/', $disability_pic);
+
+}
+else {
+  $disability_pic="NULL";
+}
+
+ if ($request->hasFile('achievement_pic')) {
+  $na=$request->file('achievement_pic')->getClientOriginalName();
+$image = $request->file('achievement_pic');
+$achievement_pic = time().$na;
+$image->move('../public/images/', $achievement_pic);
+}
+else {
+  $achievement_pic="NULL";
+}
+
+
         User::updateUser(request()->all(),$pan_pic,$aadhaar_pic,$achievement_pic,$caste_pic,$disability_pic);
 
         return back();
-
 
     }
 
@@ -173,6 +236,12 @@ else {
     $image = $request->file('photo');
     $name = time().'.'.$image->getClientOriginalExtension();
     $image->move('../public/images/', $name);
+
+   /* $disability_pic = 'NULL';
+    $achievement_pic ='NULL';
+    $pan ='NULL';
+    $aadhaar_pic ='NULL';
+*/
   }
   else {
     $name="NULL";
@@ -190,8 +259,13 @@ else {
         ", array($user['emp_id'], $user['cl_balance']));
 
 
+<<<<<<< HEAD
     return redirect()->route('homeAdmin');
+=======
+>>>>>>> daeb269164bcd883a7a56a54a8a30b18c1f25790
 
+    	return redirect()->route('homeAdmin');
 
+    }
 }
-}
+

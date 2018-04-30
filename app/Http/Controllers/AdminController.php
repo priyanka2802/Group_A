@@ -12,17 +12,32 @@ class AdminController extends Controller
 {
     //To delete user
     public function delete_user() {
-    	
+
         $data = request()->input('emp_id');
+
+        // dd($data);
+        $present = DB::select("
+                SELECT * FROM users WHERE emp_id = ?
+            ", array($data));
+        if($present == NULL) return back()->withErrors([
+            'message' => 'Employee ID Not Found!'
+        ]);
 
         $user = DB::select("
                 DELETE FROM users WHERE emp_id = ?
             ", array($data));
 
+<<<<<<< HEAD
         
         return back();
     
         
+=======
+
+        return view('/admin/admin');
+
+
+>>>>>>> daeb269164bcd883a7a56a54a8a30b18c1f25790
     }
 
     public function showadmin() {
@@ -45,19 +60,19 @@ class AdminController extends Controller
     public function Addholidays() {
 
 
-    	
+
                     Holiday::insertIntoHolidays(request()->all());
 
-            
-            
-                return redirect()->route('homeAdmin');
-        
+
+
+                return redirect('/holidaylist');
+
     }
 
     public function displayHolidays() {
-            
+
                 return view('/Addholidays');
-        
+
     }
 
 

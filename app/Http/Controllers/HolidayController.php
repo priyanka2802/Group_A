@@ -10,8 +10,9 @@ class HolidayController extends Controller
   public function display()
 {
       $holiday = DB::select("
-          SELECT * FROM holidays ORDER BY date DESC
+          SELECT * FROM holidays ORDER BY date
       ");
+      // dd($holiday);
         return view('holidaylist', compact('holiday'));
 
 }

@@ -4,6 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
+<<<<<<< HEAD
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Approval</title>
@@ -12,6 +13,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+=======
+
+</style>
+  @yield('style')
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Approval</title>
+  <meta name="description" content="User">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+>>>>>>> daeb269164bcd883a7a56a54a8a30b18c1f25790
   <link rel="apple-touch-icon" href="{{ URL::asset('apple-icon.png') }}">
     <link rel="shortcut icon" href="{{ URL::asset('favicon.ico') }}">
     @yield('head')
@@ -41,7 +53,7 @@
     -moz-transition: margin 0.2s ease-out;
     -o-transition: margin 0.2s ease-out;
 }
-}
+
 .hey p {
     text-align: center;
     color: #D51386;
@@ -107,11 +119,19 @@
                     </li>
                     <h3 class="menu-title">Elements</h3><!-- /.menu-title -->
                     <li class="menu-item">
+<<<<<<< HEAD
                         <a href="/user_profile1/{{$user_details->emp_id}}" > <i class="menu-icon fa fa-user"></i>Profile Update</a>
 
                     </li>
                     <li class="menu-item">
                         <a href="/holidaylist1" > <i class="menu-icon fa fa-pencil"></i>Holidays</a>
+=======
+                        <a href="/user_profile" > <i class="menu-icon fa fa-user"></i>Profile Update</a>
+
+                    </li>
+                    <li class="menu-item">
+                        <a href="/holidaylist" > <i class="menu-icon fa fa-pencil"></i>Holidays</a>
+>>>>>>> daeb269164bcd883a7a56a54a8a30b18c1f25790
                     </li>
 
                     <li class="menu-item">
@@ -123,10 +143,8 @@
         </nav>
     </aside><!-- /#left-panel -->
 
-    <!-- Left Panel -->
 
-    <!-- Right Panel -->
-
+<<<<<<< HEAD
    <!--  <div id="right-panel" class="right-panel">
 
        Header
@@ -253,6 +271,8 @@
                </div>
            </div>
     -->
+=======
+>>>>>>> daeb269164bcd883a7a56a54a8a30b18c1f25790
         </header><!-- /header -->
    <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -262,8 +282,37 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
 
          
+=======
+
+         <div class="content mt-4">
+            <div class="animated fadeIn">
+
+
+                  <div class="col-lg-12">
+
+                                    <ul class="nav nav-pills ">
+        <li><a href="/approval" style="font-weight: bold">All</a></li>
+        <li><a href="/leavependingapproval" style="font-weight: bold">Pending</a></li>
+        <li><a href="/leaveapproved" style="font-weight: bold">Approved</a></li>
+        <li><a href="/leaverejected" style="font-weight: bold">Rejected</a></li>
+
+    </ul>
+
+
+      </header><!-- /header -->
+ <div class="breadcrumbs">
+          <div class="col-sm-12">
+              <div class="page-header float-left">
+                  <div class="page-title">
+                      <h1>Dashboard</h1>
+                  </div>
+              </div>
+          </div>
+
+>>>>>>> daeb269164bcd883a7a56a54a8a30b18c1f25790
 
                   <div class="col-lg-12">
 

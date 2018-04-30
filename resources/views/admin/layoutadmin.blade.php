@@ -40,7 +40,6 @@
         -o-transition: margin 0.2s ease-out;
         background-color: white;
     }
-    }
     .hey p {
         text-align: center;
         color: #D51386;
@@ -108,13 +107,16 @@
                             <div class="col col-md-3"><label for="emp_id" class=" form-control-label">Employee Id</label></div>
                             <div class="col-12 col-md-9"><input type="text" placeholder="Employee Id" id="emp_id" name="emp_id" p class="form-control">
                             </div>
+
                           </div>
                           <div>
                           <button id="submit" type="submit" class="btn btn-lg btn-info btn-block">
                                               <span id="submit">Delete</span>
                                          </button>
                                       </div>
+
                         </form>
+
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -142,10 +144,6 @@
                         <a href="{{ url('/logout') }}" > <i class="menu-icon fa fa-table"></i>Logout</a>
                     </li>
 
-
-
-
-
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -153,6 +151,7 @@
 
     <!-- Left Panel -->
 
+<<<<<<< HEAD
     <!-- Right Panel -->
 
     <div id="right-panel" class="right-panel">
@@ -272,8 +271,9 @@
 
                 </div>
             </div>
+=======
+>>>>>>> daeb269164bcd883a7a56a54a8a30b18c1f25790
 
-        </header><!-- /header -->
 
 
     @yield('content')

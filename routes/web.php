@@ -17,12 +17,16 @@
 Route::get('/calendar', function() {
     return view('calendar');
 });
-Route::get('/user_profile/{user_details}', 'HomepageController@user_profile');
+Route::get('/user_profile', 'HomepageController@user_profile');
 
+<<<<<<< HEAD
 Route::get('/user_profile1/{user_details}', 'HomepageController@user_profile1');
 
 
 Route::get('/holidaylist', 'HolidayController@display'); 
+=======
+Route::get('/holidaylist', 'HolidayController@display');
+>>>>>>> daeb269164bcd883a7a56a54a8a30b18c1f25790
 
 Route::get('/holidaylist1', 'HolidayController@display1');
 
@@ -40,6 +44,9 @@ Route::post('/Addholidays', 'AdminController@Addholidays');
 
 Route::post('/u', 'RegistrationController@updateUsers');
 
+Route::get('/useredit', 'HomepageController@showuserdetails1');
+
+Route::post('/useredit', 'RegistrationController@updateUser');
 
 Route::get('/search', 'HomepageController@showall');
 
@@ -62,6 +69,8 @@ Route::get('/sclform', 'sclController@show');
 Route::get('/studyform', 'studyController@show');
 
 Route::get('/leave_history', 'HomepageController@show_leaves_history');
+
+Route::get('/leave_history_approving', 'HomepageController@show_leaves_history_approving');
 
 Route::get('/user', 'HomepageController@showuser')->name('homeGeneral');
 

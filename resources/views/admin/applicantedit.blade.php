@@ -156,6 +156,7 @@
                      <tr>
                         <td>Aadhaar Image
                           </td>
+
                           @if ($user_details->aadhaar_pic == 'NULL')
                           <td>Not Available<input type="file" name="aadhaar_pic" class="form-control"></td>
                           @else
@@ -211,6 +212,7 @@
                   </tr>
 
 
+
                     </tbody>
                   </table>
                   <div>
@@ -219,15 +221,9 @@
                   </div>
 
 
+
             </form>
             </div>
-
-
-
-
-
-
-
 
                   </div>
 
